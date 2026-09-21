@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
-import { team } from "@/data/team";
 import { technologyStack } from "@/data/technology";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading, SectionLabel } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
+import { Button } from "@/components/ui/Button";
 import { CTASection } from "@/components/sections/CTASection";
 
 export const metadata: Metadata = buildMetadata({
@@ -150,27 +150,23 @@ export default function AboutPage() {
 
       <section className="border-t border-ink/10 py-24 md:py-32">
         <Container>
-          <SectionLabel>Team</SectionLabel>
-          <h2 className="mt-5 max-w-xl text-balance text-[30px] font-semibold leading-[1.1] tracking-[-0.02em] text-ink sm:text-[38px]">
-            The people behind the work.
-          </h2>
-          {team.length === 0 ? (
-            <Reveal delay={0.1}>
-              <p className="mt-8 max-w-md text-muted leading-relaxed">
-                Team profiles are being prepared and will appear here soon.
+          <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
+            <div>
+              <SectionLabel>Team</SectionLabel>
+              <h2 className="mt-5 max-w-xl text-balance text-[30px] font-semibold leading-[1.1] tracking-[-0.02em] text-ink sm:text-[38px]">
+                The people behind the work.
+              </h2>
+              <p className="mt-4 max-w-md text-muted leading-relaxed">
+                A small, senior team working across design and engineering —
+                every person is hands-on with the products we ship.
               </p>
-            </Reveal>
-          ) : (
-            <div className="mt-12 grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-4">
-              {team.map((member) => (
-                <div key={member.name}>
-                  <div className="aspect-[3/4] w-full rounded-xl bg-purple-soft/30" />
-                  <p className="mt-4 font-semibold text-ink">{member.name}</p>
-                  <p className="text-sm text-muted">{member.role}</p>
-                </div>
-              ))}
             </div>
-          )}
+            <Reveal delay={0.1} className="shrink-0">
+              <Button href="/team" variant="ghost" size="sm">
+                Meet the team
+              </Button>
+            </Reveal>
+          </div>
         </Container>
       </section>
 

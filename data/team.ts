@@ -5,6 +5,8 @@ export type TeamMember = {
   name: string;
   role: string;
   bio: string;
+  photo?: string;
+  linkedin?: string;
 };
 
 export const team: TeamMember[] = [];
