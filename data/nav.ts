@@ -2,6 +2,7 @@ export const primaryNav = [
   { label: "Work", href: "/work" },
   { label: "Services", href: "/services" },
   { label: "About", href: "/about" },
+  { label: "Team", href: "/team" },
   { label: "Process", href: "/process" },
   { label: "Insights", href: "/insights" },
 ];
