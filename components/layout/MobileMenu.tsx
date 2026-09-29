@@ -20,7 +20,7 @@ export function MobileMenu({ onClose }: { onClose: () => void }) {
       aria-modal="true"
     >
       <Container className="flex items-center justify-between py-6">
-        <Link href="/" aria-label="MEbi Technologies — Home">
+        <Link href="/" aria-label="MEBI Technology — Home">
           <Logo type="mark" variant="white" className="h-8" />
         </Link>
         <button

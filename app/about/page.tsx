@@ -1,62 +1,44 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
 import { technologyStack } from "@/data/technology";
+import { leadership } from "@/data/team";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading, SectionLabel } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
+import { TeamCard } from "@/components/team/TeamCard";
 import { CTASection } from "@/components/sections/CTASection";
 
 export const metadata: Metadata = buildMetadata({
   title: "About",
   description:
-    "MEbi Technologies is a digital product studio designing and engineering websites, applications and software for ambitious businesses.",
+    "Learn why MEBI Technology exists, what we believe, and who's behind the firm building enterprise-grade technology solutions with a personal touch.",
   path: "/about",
 });
 
-const beliefs = [
-  {
-    title: "Business first",
-    description: "Every design and engineering decision is judged against the business problem it's solving.",
-  },
-  {
-    title: "Design before build",
-    description: "The experience is defined and validated before production code is written.",
-  },
-  {
-    title: "Built to last",
-    description: "We build systems that hold up under real use, not just in a demo.",
-  },
-  {
-    title: "Detail is the work",
-    description: "The difference between good and exceptional is almost always in the details.",
-  },
+const snapshot = [
+  { label: "Timeline", value: "Active since 2026, built from day one on structured discipline" },
+  { label: "Focus", value: "Depth over breadth — fewer clients, closer partnership" },
+  { label: "Standard", value: "Enterprise-grade rigor from our very first project" },
 ];
 
-const capabilities = [
-  "UI/UX Design",
-  "Web Development",
-  "Mobile App Development",
-  "Custom Software Development",
-  "Digital Product Design",
-  "Technology Consulting",
-];
-
-const workingSteps = [
-  { title: "We listen first", description: "Every engagement starts with understanding your business, not pitching a solution." },
-  { title: "We design in the open", description: "You see the work as it develops — flows, wireframes, prototypes — not just a final reveal." },
-  { title: "We build with intent", description: "Engineering decisions are made for maintainability, not shortcuts." },
-  { title: "We stay accountable", description: "Clear scope, clear timelines, and honest updates when something changes." },
+const values = [
+  { title: "Innovation", description: "We challenge convention to build practical solutions for tomorrow." },
+  { title: "Mastery", description: "We pursue excellence through learning, expertise, and continuous improvement." },
+  { title: "Partnership", description: "We believe lasting partnerships create sustainable success." },
+  { title: "Adaptability", description: "We embrace change and evolve with every challenge." },
+  { title: "Commitment", description: "We deliver excellence with consistency, accountability, and purpose." },
+  { title: "Trust", description: "Integrity is at the heart of everything we do." },
 ];
 
 export default function AboutPage() {
   return (
     <>
       <PageHeader
-        label="About MEbi"
-        title="We build what's next."
-        description="MEbi Technologies designs and engineers digital products for businesses that need more than a template and less than a full internal engineering team."
+        label="About MEBI"
+        title="We started MEBI because “generic” wasn't good enough."
+        description="We saw organizations across sectors underserved by technology partners who treat every engagement as generic. We're building something different."
       />
 
       <section className="py-24 md:py-32">
@@ -65,86 +47,91 @@ export default function AboutPage() {
             <Reveal>
               <SectionLabel>Our Story</SectionLabel>
               <h2 className="mt-5 text-balance text-[30px] font-semibold leading-[1.1] tracking-[-0.02em] text-ink sm:text-[38px]">
-                A studio built around design and engineering, together.
+                Fewer clients. Closer partnership.
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
               <div className="space-y-5 text-lg leading-relaxed text-muted">
                 <p>
-                  MEbi Technologies exists to close the gap between a good idea
-                  and a working digital product — the gap where most projects
-                  lose momentum, coherence, or both.
+                  We started MEBI Technology because we saw organizations
+                  across sectors underserved by technology partners who treat
+                  every engagement as generic. We&apos;re building something
+                  different — a firm that gives every client real attention,
+                  and is ambitious enough to hold itself to the standards of
+                  the best in the industry from day one.
                 </p>
                 <p>
-                  We work as a single team across design and engineering, so
-                  the product that gets built is the product that was designed
-                  — not a compromise made under deadline pressure.
+                  What we may lack in years, we make up for in rigor: a
+                  disciplined delivery methodology, deep technical expertise
+                  across modern stacks, and leadership that is personally
+                  invested in every project&apos;s outcome.
                 </p>
-                <p className="text-sm text-muted/70">
-                  Full company history and milestones will be added here as
-                  MEbi&apos;s story develops.
+                <p className="font-medium text-ink">
+                  Every client today helps shape the firm MEBI becomes
+                  tomorrow.
                 </p>
               </div>
+
+              <dl className="mt-10 grid grid-cols-1 gap-6 border-t border-ink/10 pt-8 sm:grid-cols-3">
+                {snapshot.map((s) => (
+                  <div key={s.label}>
+                    <dt className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">
+                      {s.label}
+                    </dt>
+                    <dd className="mt-2 text-sm text-ink/80 leading-relaxed">{s.value}</dd>
+                  </div>
+                ))}
+              </dl>
             </Reveal>
-          </div>
-        </Container>
-      </section>
-
-      <section className="border-t border-ink/10 py-24 md:py-32">
-        <Container>
-          <SectionHeading label="What We Believe" title="Principles that shape every engagement." />
-          <div className="mt-14 grid grid-cols-1 gap-px overflow-hidden rounded-2xl bg-ink/10 sm:grid-cols-2">
-            {beliefs.map((b, i) => (
-              <Reveal key={b.title} delay={0.06 * i}>
-                <div className="h-full bg-bg p-8 md:p-10">
-                  <h3 className="text-xl font-semibold tracking-[-0.01em] text-ink">{b.title}</h3>
-                  <p className="mt-3 text-muted leading-relaxed">{b.description}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="border-t border-ink/10 py-24 md:py-32">
-        <Container>
-          <SectionLabel>Our Capabilities</SectionLabel>
-          <div className="mt-8 flex flex-wrap gap-3">
-            {capabilities.map((c, i) => (
-              <Reveal key={c} delay={0.04 * i}>
-                <span className="inline-block rounded-full border border-ink/10 px-5 py-2.5 text-sm text-ink/80">
-                  {c}
-                </span>
-              </Reveal>
-            ))}
           </div>
         </Container>
       </section>
 
       <section className="border-t border-ink/10 bg-surface-dark py-24 text-white md:py-32">
         <Container>
-          <SectionHeading dark label="How We Work" title="A process built on visibility, not surprises." />
-          <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {workingSteps.map((s, i) => (
-              <Reveal key={s.title} delay={0.06 * i}>
-                <div className="border-t border-white/10 pt-6">
-                  <span className="text-sm text-white/40">{String(i + 1).padStart(2, "0")}</span>
-                  <h3 className="mt-3 text-lg font-semibold text-white">{s.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-white/60">{s.description}</p>
-                </div>
-              </Reveal>
-            ))}
+          <div className="grid grid-cols-1 gap-14 lg:grid-cols-2">
+            <Reveal>
+              <SectionLabel className="text-purple-soft">Vision</SectionLabel>
+              <p className="mt-5 text-balance text-2xl font-medium leading-relaxed text-white md:text-3xl">
+                To be a leading global technology company that transforms
+                lives and drives technological excellence — at the forefront
+                of innovation, pushing the boundaries of what&apos;s possible.
+              </p>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <SectionLabel className="text-purple-soft">Mission</SectionLabel>
+              <p className="mt-5 text-balance text-2xl font-medium leading-relaxed text-white md:text-3xl">
+                To empower minds, enrich lives, and transform the world
+                through the limitless potential of technology. We believe
+                every individual, business, and community deserves access to
+                solutions that unlock new opportunities and drive real
+                progress.
+              </p>
+            </Reveal>
           </div>
+          <Reveal delay={0.15}>
+            <p className="mt-16 border-t border-white/10 pt-10 text-balance text-lg text-white/60">
+              &ldquo;We are the present and the future, and we look forward to
+              making the world a better place through technological
+              expertise.&rdquo;
+            </p>
+          </Reveal>
         </Container>
       </section>
 
       <section className="border-t border-ink/10 py-24 md:py-32">
         <Container>
-          <SectionHeading
-            label="Our Culture"
-            title="Small team, high ownership."
-            description="Every person on an engagement is a decision-maker, not a pass-through. That keeps feedback loops short and quality consistent."
-          />
+          <SectionHeading label="Our Values" title="Creating lasting impact through technology." />
+          <div className="mt-14 grid grid-cols-1 gap-px overflow-hidden rounded-2xl bg-ink/10 sm:grid-cols-2 lg:grid-cols-3">
+            {values.map((v, i) => (
+              <Reveal key={v.title} delay={0.05 * i}>
+                <div className="h-full bg-bg p-8">
+                  <h3 className="text-lg font-semibold tracking-[-0.01em] text-ink">{v.title}</h3>
+                  <p className="mt-3 text-sm text-muted leading-relaxed">{v.description}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </Container>
       </section>
 
@@ -152,20 +139,24 @@ export default function AboutPage() {
         <Container>
           <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
             <div>
-              <SectionLabel>Team</SectionLabel>
+              <SectionLabel>Leadership Team</SectionLabel>
               <h2 className="mt-5 max-w-xl text-balance text-[30px] font-semibold leading-[1.1] tracking-[-0.02em] text-ink sm:text-[38px]">
-                The people behind the work.
+                The people leading MEBI.
               </h2>
-              <p className="mt-4 max-w-md text-muted leading-relaxed">
-                A small, senior team working across design and engineering —
-                every person is hands-on with the products we ship.
-              </p>
             </div>
             <Reveal delay={0.1} className="shrink-0">
               <Button href="/team" variant="ghost" size="sm">
-                Meet the team
+                Meet the full team
               </Button>
             </Reveal>
+          </div>
+
+          <div className="mt-14 grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3 lg:grid-cols-5">
+            {leadership.map((member, i) => (
+              <Reveal key={member.name} delay={0.06 * i}>
+                <TeamCard member={member} />
+              </Reveal>
+            ))}
           </div>
         </Container>
       </section>
@@ -173,7 +164,7 @@ export default function AboutPage() {
       <section className="border-t border-ink/10 py-24 md:py-32">
         <Container>
           <SectionHeading label="Technology" title="The tools behind the work." />
-          <div className="mt-12 grid grid-cols-2 gap-10 md:grid-cols-5">
+          <div className="mt-12 grid grid-cols-2 gap-10 md:grid-cols-4">
             {technologyStack.map((group, i) => (
               <Reveal key={group.category} delay={0.05 * i}>
                 <h3 className="text-xs font-semibold uppercase tracking-[0.16em] text-muted">

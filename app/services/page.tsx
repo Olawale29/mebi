@@ -10,7 +10,7 @@ import { CTASection } from "@/components/sections/CTASection";
 export const metadata: Metadata = buildMetadata({
   title: "Services",
   description:
-    "UI/UX design, web development, mobile app development, custom software, product strategy and technology consulting — from idea to digital product.",
+    "From custom software to cloud infrastructure and automation, MEBI Technology delivers end-to-end technology services built around your business.",
   path: "/services",
 });
 
@@ -19,8 +19,8 @@ export default function ServicesPage() {
     <>
       <PageHeader
         label="Services"
-        title="From idea to digital product."
-        description="Every engagement combines product thinking, design and engineering — shaped around your business, not a fixed package."
+        title="Four services. One standard of rigor."
+        description="Whether you need a single custom build or an end-to-end digital transformation, every MEBI engagement runs through the same disciplined process — and gets the same level of attention."
       />
 
       <section className="pb-24 md:pb-32">
@@ -39,46 +39,42 @@ export default function ServicesPage() {
                       {service.description}
                     </p>
                     <div className="mt-6">
-                      {service.hasDedicatedPage ? (
-                        <Button href={`/services/${service.slug}`} variant="ghost" size="sm">
-                          Learn more
-                        </Button>
-                      ) : (
-                        <Button href="/contact" variant="ghost" size="sm">
-                          {service.cta}
-                        </Button>
-                      )}
+                      <Button href={`/services/${service.slug}`} variant="ghost" size="sm">
+                        {service.cta}
+                      </Button>
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 gap-y-8">
                     <div>
                       <h3 className="text-xs font-semibold uppercase tracking-[0.16em] text-muted">
-                        What we solve
+                        What this includes
                       </h3>
                       <ul className="mt-3 space-y-2">
-                        {service.whatWeSolve.slice(0, 3).map((item) => (
+                        {service.includes.map((item) => (
                           <li key={item} className="text-sm text-ink/80 leading-relaxed">
                             {item}
                           </li>
                         ))}
                       </ul>
                     </div>
-                    <div>
-                      <h3 className="text-xs font-semibold uppercase tracking-[0.16em] text-muted">
-                        Capabilities
-                      </h3>
-                      <div className="mt-3 flex flex-wrap gap-2">
-                        {service.capabilities.slice(0, 6).map((c) => (
-                          <span
-                            key={c}
-                            className="rounded-full border border-ink/10 px-3 py-1 text-xs text-muted"
-                          >
-                            {c}
-                          </span>
-                        ))}
+                    {service.builtWith && (
+                      <div>
+                        <h3 className="text-xs font-semibold uppercase tracking-[0.16em] text-muted">
+                          Built with
+                        </h3>
+                        <div className="mt-3 flex flex-wrap gap-2">
+                          {service.builtWith.map((tech) => (
+                            <span
+                              key={tech}
+                              className="rounded-full border border-ink/10 px-3 py-1 text-xs text-muted"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
                 </div>
               </Reveal>

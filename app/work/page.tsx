@@ -8,7 +8,7 @@ import { CTASection } from "@/components/sections/CTASection";
 export const metadata: Metadata = buildMetadata({
   title: "Work",
   description:
-    "A selection of MEbi Technologies' work across web, mobile, UI/UX and custom software.",
+    "A selection of MEBI Technology's work across web, mobile, UI/UX and custom software.",
   path: "/work",
 });
 

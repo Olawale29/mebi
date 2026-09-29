@@ -9,8 +9,7 @@ import { CTASection } from "@/components/sections/CTASection";
 
 export const metadata: Metadata = buildMetadata({
   title: "Process",
-  description:
-    "How MEbi Technologies moves from discovery to a launched, working digital product.",
+  description: "The 8-stage delivery methodology MEBI Technology runs every engagement through.",
   path: "/process",
 });
 
@@ -19,8 +18,8 @@ export default function ProcessPage() {
     <>
       <PageHeader
         label="Process"
-        title="Good products aren't accidents."
-        description="Every engagement follows the same disciplined path — from understanding the problem to shipping and improving the product in the real world."
+        title="A disciplined process, not a black box."
+        description="Every engagement runs through the same 8-stage methodology — so you always know what's happening and why."
       />
 
       <section className="pb-24 md:pb-32">
@@ -33,7 +32,7 @@ export default function ProcessPage() {
         <Container>
           <Reveal>
             <h2 className="max-w-2xl text-balance text-[30px] font-semibold leading-[1.1] tracking-[-0.02em] sm:text-[40px]">
-              Six stages. One continuous process.
+              Eight stages. One continuous process.
             </h2>
           </Reveal>
           <div className="mt-14 grid grid-cols-1 gap-0 sm:grid-cols-2 lg:grid-cols-3">

@@ -10,7 +10,7 @@ import { CTASection } from "@/components/sections/CTASection";
 
 export const metadata: Metadata = buildMetadata({
   title: "Team",
-  description: "The people designing and engineering at MEbi Technologies.",
+  description: "The people behind MEBI Technology.",
   path: "/team",
 });
 

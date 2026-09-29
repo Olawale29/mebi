@@ -8,7 +8,8 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export const metadata: Metadata = buildMetadata({
   title: "Contact",
-  description: "Start a conversation with MEbi Technologies about your next digital product.",
+  description:
+    "Get in touch with MEBI Technology for software development, IT consulting, digital transformation, and cloud & security services.",
   path: "/contact",
 });
 
@@ -17,8 +18,8 @@ export default function ContactPage() {
     <>
       <PageHeader
         label="Contact"
-        title="Let's build something useful."
-        description="Tell us about the problem you're solving. We'll follow up with next steps."
+        title="Let's talk about what you're building."
+        description="Fill out the form and we'll get back to you within 1–2 business days — or reach us directly below."
       />
 
       <section className="pb-24 md:pb-32">
@@ -28,23 +29,31 @@ export default function ContactPage() {
               <Reveal>
                 <div>
                   <h2 className="text-xs font-semibold uppercase tracking-[0.16em] text-muted">
-                    Contact Details
+                    Direct Contact
                   </h2>
                   <div className="mt-5 space-y-4">
-                    <p className="text-ink">
-                      {company.email ?? (
-                        <span className="text-muted/60">Email — to be added</span>
-                      )}
-                    </p>
-                    <p className="text-ink">
-                      {company.phone ?? (
-                        <span className="text-muted/60">Phone — to be added</span>
-                      )}
-                    </p>
-                    <p className="text-ink">
-                      {company.address ?? (
-                        <span className="text-muted/60">Address — to be added</span>
-                      )}
+                    <a href={`mailto:${company.email}`} className="block text-ink hover:text-primary">
+                      {company.email}
+                    </a>
+                    {company.phones.map((phone) => (
+                      <a
+                        key={phone}
+                        href={`tel:${phone.replace(/\s/g, "")}`}
+                        className="block text-ink hover:text-primary"
+                      >
+                        {phone}
+                      </a>
+                    ))}
+                    <a
+                      href={company.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block text-ink hover:text-primary"
+                    >
+                      www.mebitechnology.com
+                    </a>
+                    <p className="max-w-xs pt-2 text-sm leading-relaxed text-muted">
+                      {company.address}
                     </p>
                   </div>
                 </div>

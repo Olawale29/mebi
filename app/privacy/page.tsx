@@ -33,7 +33,7 @@ const sections = [
   },
   {
     title: "6. Contact",
-    body: `Questions about this policy can be sent to ${company.email ?? "the contact details listed on our Contact page"}.`,
+    body: `Questions about this policy can be sent to ${company.email}.`,
   },
 ];
 

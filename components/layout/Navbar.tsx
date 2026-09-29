@@ -45,7 +45,7 @@ export function Navbar() {
           }
         >
           <Container className="flex items-center justify-between">
-            <Link href="/" aria-label="MEbi Technologies — Home">
+            <Link href="/" aria-label="MEBI Technology — Home">
               <Logo type="mark" className="h-8 md:h-9" />
             </Link>
 

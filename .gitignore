@@ -24,6 +24,9 @@
 .DS_Store
 *.pem
 
+# raw source assets not needed at runtime (processed copies live in public/)
+/Pictures
+
 # debug
 npm-debug.log*
 yarn-debug.log*

@@ -4,8 +4,6 @@ import { motion, useReducedMotion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 
-const labels = ["Product Design", "Web Engineering", "Mobile", "Software"];
-
 const ease = [0.16, 1, 0.3, 1] as const;
 
 export function Hero() {
@@ -20,20 +18,16 @@ export function Hero() {
               initial={reduceMotion ? undefined : { opacity: 0, y: 16 }}
               animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease }}
-              className="mb-8 flex flex-wrap gap-x-4 gap-y-2"
+              className="mb-8"
             >
-              {labels.map((label) => (
-                <span
-                  key={label}
-                  className="text-xs font-semibold uppercase tracking-[0.18em] text-muted"
-                >
-                  {label}
-                </span>
-              ))}
+              <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-muted">
+                <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden />
+                Where innovation meets possibilities
+              </span>
             </motion.div>
 
             <h1 className="text-balance text-[52px] font-semibold leading-[0.98] tracking-[-0.03em] text-ink sm:text-[68px] lg:text-[84px]">
-              {["We build digital", "products people", "remember."].map((line, i) => (
+              {["Technology", "partners who", "actually pay", "attention."].map((line, i) => (
                 <span key={line} className="block overflow-hidden pb-[0.2em] -mb-[0.2em]">
                   <motion.span
                     className="block"
@@ -53,9 +47,10 @@ export function Hero() {
               transition={{ duration: 0.6, delay: 0.5, ease }}
               className="mt-8 max-w-lg text-balance text-lg leading-relaxed text-muted md:text-xl"
             >
-              MEbi Technologies designs and engineers digital experiences,
-              websites, applications and software that help ambitious
-              businesses operate, compete and grow.
+              We design, build, and support the software, cloud, and
+              automation systems that help organizations move faster — with
+              the kind of hands-on partnership most firms outgrow after the
+              sales call.
             </motion.p>
 
             <motion.div
@@ -65,10 +60,10 @@ export function Hero() {
               className="mt-10 flex flex-wrap items-center gap-4"
             >
               <Button href="/contact" variant="secondary" size="md">
-                Start a Project
+                Book a Free Consultation
               </Button>
-              <Button href="/work" variant="ghost" size="md">
-                Explore Our Work
+              <Button href="#what-we-do" variant="ghost" size="md" arrow={false}>
+                See What We Do ↓
               </Button>
             </motion.div>
           </div>
@@ -137,14 +132,14 @@ function HeroVisual() {
         className="absolute bottom-0 right-0 w-[52%] rounded-2xl border border-ink/10 bg-surface-dark p-5 text-white shadow-[0_30px_60px_-20px_rgba(18,14,36,0.3)] lg:bottom-6 lg:right-2"
       >
         <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-white/50">
-          Mobile App
+          Automation
         </p>
         <div className="mt-4 space-y-2.5">
           <div className="h-2.5 w-4/5 rounded-full bg-white/15" />
           <div className="h-2.5 w-3/5 rounded-full bg-white/15" />
         </div>
         <div className="mt-5 flex items-center justify-between rounded-xl bg-white/5 p-3">
-          <span className="text-xs text-white/70">Sync complete</span>
+          <span className="text-xs text-white/70">Workflow automated</span>
           <span className="flex h-6 w-6 items-center justify-center rounded-full bg-accent text-[11px] text-surface-dark">
             ✓
           </span>
@@ -158,7 +153,7 @@ function HeroVisual() {
         className="absolute left-0 top-1/3 flex items-center gap-2 rounded-full border border-ink/10 bg-white px-4 py-2.5 shadow-[0_20px_40px_-15px_rgba(18,14,36,0.2)] lg:left-4"
       >
         <span className="h-2 w-2 rounded-full bg-accent" />
-        <span className="text-xs font-medium text-ink">Design system live</span>
+        <span className="text-xs font-medium text-ink">Systems integrated</span>
       </motion.div>
     </div>
   );

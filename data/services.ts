@@ -6,228 +6,101 @@ export type Service = {
   description: string;
   heroHeadline: string;
   heroSub: string;
-  capabilities: string[];
-  whatWeSolve: string[];
-  deliverables: string[];
-  typicalEngagement: string;
+  includes: string[];
+  builtWith?: string[];
   cta: string;
-  hasDedicatedPage: boolean;
 };
 
 export const services: Service[] = [
   {
     number: "01",
-    slug: "ui-ux-design",
-    title: "UI/UX Design",
+    slug: "software-development",
+    title: "Software & Solution Development",
     shortDescription:
-      "Research-led design that turns complex products into interfaces people navigate without thinking twice.",
+      "Custom web, mobile, enterprise, and cloud-based solutions engineered to solve the specific problem you actually have — not a generic template.",
     description:
-      "We design the experience before a single line of code is written — mapping how people move through a product and how every screen should look, feel and respond.",
-    heroHeadline: "Design that makes complexity simple.",
+      "Custom web, mobile, enterprise, and cloud-based solutions built to solve complex business challenges — not adapted from a template.",
+    heroHeadline: "Software built around the problem you actually have.",
     heroSub:
-      "We research, structure and design digital products so that complexity disappears into an interface people already know how to use.",
-    capabilities: [
-      "User research",
-      "Information architecture",
-      "User flows",
-      "Wireframing",
-      "UI design",
-      "Design systems",
-      "Prototyping",
-      "Usability testing",
+      "Custom web, mobile, enterprise, and cloud-based solutions — engineered from the ground up, not adapted from a template.",
+    includes: [
+      "Custom web & mobile application development",
+      "Enterprise software systems",
+      "Cloud-native application architecture",
+      "API design & systems integration",
     ],
-    whatWeSolve: [
-      "Products that work but confuse the people using them",
-      "Inconsistent interfaces across a growing product",
-      "No design system to keep engineering and design aligned",
-      "Low conversion or high drop-off in key user flows",
-    ],
-    deliverables: [
-      "User research summary",
-      "Information architecture & flows",
-      "Wireframes and prototypes",
-      "UI design files",
-      "A documented design system",
-    ],
-    typicalEngagement: "4–10 weeks, depending on product scope",
-    cta: "Start a Design Project",
-    hasDedicatedPage: true,
+    builtWith: ["Python", "Java", "JavaScript", "React", "Flutter", "Node.js", ".NET", "C#"],
+    cta: "Start a Software Project",
   },
   {
     number: "02",
-    slug: "web-development",
-    title: "Web Development",
+    slug: "it-consulting",
+    title: "IT Consulting & Capacity Building",
     shortDescription:
-      "Websites and web applications engineered for speed, structure and long-term maintainability.",
+      "Strategic technology consulting, managed IT services, and hands-on training that help your team get more out of every tool you already own.",
     description:
-      "From marketing sites to full SaaS platforms, we build web products on modern, well-documented foundations that your team can keep building on.",
-    heroHeadline: "Web experiences built to perform.",
+      "Strategic technology consulting, managed IT services, and professional training that maximize the value of your existing digital investments.",
+    heroHeadline: "Get more out of the technology you already own.",
     heroSub:
-      "We design and engineer websites and web applications that load fast, scale cleanly and hold up under real business use.",
-    capabilities: [
-      "Corporate & marketing websites",
-      "Web applications",
-      "SaaS platforms",
-      "E-commerce",
-      "Customer portals",
-      "Internal business tools",
-      "Third-party integrations",
-      "Performance optimization",
+      "Strategic consulting, managed IT services, and hands-on training built around your team, not a generic playbook.",
+    includes: [
+      "Technology strategy & roadmapping",
+      "Managed IT services",
+      "Staff training & capacity building",
+      "IT infrastructure audits",
     ],
-    whatWeSolve: [
-      "A website that doesn't reflect the quality of the business behind it",
-      "Slow, hard-to-maintain platforms built on outdated stacks",
-      "Manual processes that should be internal tools",
-      "Systems that don't talk to each other",
-    ],
-    deliverables: [
-      "Technical architecture & strategy",
-      "Production-ready frontend and backend",
-      "QA and cross-device testing",
-      "Deployment and monitoring setup",
-    ],
-    typicalEngagement: "6–16 weeks, depending on complexity",
-    cta: "Build With MEbi",
-    hasDedicatedPage: true,
+    cta: "Book a Consulting Call",
   },
   {
     number: "03",
-    slug: "mobile-app-development",
-    title: "Mobile App Development",
+    slug: "digital-transformation",
+    title: "Digital Transformation & Automation",
     shortDescription:
-      "Native and cross-platform mobile products, engineered from first interaction to App Store launch.",
+      "We modernize the manual, error-prone parts of your business with AI, workflow automation, and systems integration — so your team spends less time on busywork.",
     description:
-      "We design and build mobile applications that feel native, perform reliably and are engineered to be maintained long after launch.",
-    heroHeadline: "Products that live in your users' hands.",
+      "Modernizing business processes through AI, workflow automation, and systems integration to improve efficiency and cut manual work.",
+    heroHeadline: "Less busywork. More work that matters.",
     heroSub:
-      "From first interaction to App Store launch, we build mobile products around the people who use them.",
-    capabilities: [
-      "iOS development",
-      "Android development",
-      "Cross-platform development",
-      "API integration",
-      "Authentication",
-      "Payments",
-      "Push notifications",
-      "App analytics",
-      "App Store & Play Store deployment",
+      "We modernize the manual, error-prone parts of your business with AI, automation, and systems integration.",
+    includes: [
+      "Process automation & workflow redesign",
+      "AI-powered tools & integrations",
+      "Legacy system modernization",
+      "Systems integration across your tech stack",
     ],
-    whatWeSolve: [
-      "An idea that needs to become a functioning mobile product",
-      "A web product that now needs a native mobile presence",
-      "Fragmented experiences across iOS and Android",
-      "Apps that work but feel unfinished",
-    ],
-    deliverables: [
-      "Mobile UI/UX design",
-      "Native or cross-platform application build",
-      "API and backend integration",
-      "Store submission and release management",
-    ],
-    typicalEngagement: "8–20 weeks, depending on platform scope",
-    cta: "Build My App",
-    hasDedicatedPage: true,
+    cta: "Explore Automation",
   },
   {
     number: "04",
-    slug: "custom-software",
-    title: "Custom Software",
+    slug: "data-cloud-security",
+    title: "Data, Cloud & Cybersecurity",
     shortDescription:
-      "Business systems — CRMs, ERPs, dashboards and internal tools — built around how your business actually runs.",
+      "Cloud architecture, business intelligence, and security built in from the start — not bolted on after something goes wrong.",
     description:
-      "When off-the-shelf software no longer fits, we design and engineer systems shaped around your specific workflows, data and scale requirements.",
-    heroHeadline: "Software built around your business.",
+      "Cloud technologies, business intelligence, and cybersecurity that build secure, scalable, data-driven operations.",
+    heroHeadline: "Security built in from the start.",
     heroSub:
-      "We design and engineer custom systems — from internal tools to full platforms — around the way your business actually operates.",
-    capabilities: [
-      "CRM systems",
-      "ERP systems",
-      "Inventory management",
-      "Booking platforms",
-      "Marketplaces",
-      "Business dashboards",
-      "Workflow automation",
-      "Internal tooling",
+      "Cloud architecture, business intelligence, and cybersecurity — designed in from day one, not bolted on afterward.",
+    includes: [
+      "Cloud migration & infrastructure (Azure, AWS, Google Cloud)",
+      "Business intelligence & dashboards (Power BI, Tableau)",
+      "Database design & management",
+      "Cybersecurity assessments & hardening",
     ],
-    whatWeSolve: [
-      "Generic software that doesn't fit how the business operates",
-      "Manual, spreadsheet-driven processes at growing scale",
-      "Disconnected tools that should be a single system",
-      "Legacy software that can no longer be safely extended",
+    builtWith: [
+      "Microsoft Azure",
+      "AWS",
+      "Google Cloud",
+      "Docker",
+      "Kubernetes",
+      "Power BI",
+      "SQL Server",
+      "PostgreSQL",
+      "MongoDB",
+      "Tableau",
+      "Microsoft Defender",
     ],
-    deliverables: [
-      "System architecture and data modelling",
-      "Custom application build",
-      "Security and access control implementation",
-      "Documentation and handover",
-    ],
-    typicalEngagement: "8–24 weeks, depending on system scope",
-    cta: "Discuss My Product",
-    hasDedicatedPage: true,
-  },
-  {
-    number: "05",
-    slug: "product-strategy",
-    title: "Product Strategy",
-    shortDescription:
-      "Clarifying what to build, for whom, and why — before any design or engineering effort begins.",
-    description:
-      "We help teams turn an ambiguous idea or business problem into a clear, sequenced product plan that design and engineering can execute against.",
-    heroHeadline: "Clarity before code.",
-    heroSub:
-      "We help ambitious businesses turn an idea or problem into a clear, sequenced product plan.",
-    capabilities: [
-      "Discovery workshops",
-      "Market & competitive review",
-      "Product roadmapping",
-      "Feature prioritization",
-      "Technical feasibility review",
-    ],
-    whatWeSolve: [
-      "An idea that hasn't been shaped into a buildable product",
-      "Uncertainty about what to build first",
-      "Misalignment between business goals and product direction",
-    ],
-    deliverables: [
-      "Product strategy document",
-      "Prioritized roadmap",
-      "Scoped requirements for design and engineering",
-    ],
-    typicalEngagement: "2–4 weeks",
-    cta: "Talk Strategy",
-    hasDedicatedPage: false,
-  },
-  {
-    number: "06",
-    slug: "technology-consulting",
-    title: "Technology Consulting",
-    shortDescription:
-      "Independent technical guidance on architecture, stack decisions and engineering practices.",
-    description:
-      "We advise businesses and technical teams on the decisions that shape a product's long-term cost, performance and maintainability.",
-    heroHeadline: "Technology built around your business.",
-    heroSub:
-      "Independent, practical guidance on the technical decisions that shape your product's future.",
-    capabilities: [
-      "Architecture review",
-      "Technology stack selection",
-      "Engineering process audit",
-      "Scalability planning",
-      "Security review",
-    ],
-    whatWeSolve: [
-      "Uncertainty about whether current systems can scale",
-      "Technical debt slowing the team down",
-      "No in-house technical leadership for a critical decision",
-    ],
-    deliverables: [
-      "Technical audit and findings",
-      "Recommendations report",
-      "Ongoing advisory (optional)",
-    ],
-    typicalEngagement: "Project-based or ongoing retainer",
-    cta: "Talk to MEbi",
-    hasDedicatedPage: false,
+    cta: "Talk to Our Cloud & Security Team",
   },
 ];
 

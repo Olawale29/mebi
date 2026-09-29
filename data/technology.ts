@@ -1,22 +1,18 @@
 export const technologyStack = [
   {
-    category: "Frontend",
-    items: ["React", "Next.js", "TypeScript"],
-  },
-  {
-    category: "Backend",
-    items: ["Laravel", "PHP", "Node.js"],
-  },
-  {
-    category: "Mobile",
-    items: ["Flutter", "React Native"],
-  },
-  {
-    category: "Database",
-    items: ["PostgreSQL", "MySQL"],
+    category: "Languages & Frameworks",
+    items: ["Python", "Java", "JavaScript", "React", "Flutter", "Node.js", ".NET", "C#"],
   },
   {
     category: "Cloud & DevOps",
-    items: ["AWS", "Vercel", "Docker"],
+    items: ["Microsoft Azure", "AWS", "Google Cloud", "Docker", "Kubernetes"],
+  },
+  {
+    category: "Data & Intelligence",
+    items: ["Power BI", "Tableau", "SQL Server", "PostgreSQL", "MongoDB"],
+  },
+  {
+    category: "Security",
+    items: ["Microsoft Defender"],
   },
 ];

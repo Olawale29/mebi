@@ -25,7 +25,7 @@ export function Logo({
   return (
     <Image
       src={sources[variant][type]}
-      alt="MEbi Technologies"
+      alt="MEBI Technology"
       width={width}
       height={height}
       priority

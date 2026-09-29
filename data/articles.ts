@@ -17,7 +17,7 @@ export const articles: Article[] = [
     excerpt:
       "Skipping the design phase feels faster. It rarely is. Here's how a design-first process saves engineering time later.",
     category: "Product",
-    author: "MEbi Technologies",
+    author: "MEBI Technology",
     date: "2026-06-02",
     readTime: "5 min read",
     featured: true,
@@ -34,7 +34,7 @@ export const articles: Article[] = [
     excerpt:
       "The right stack isn't the newest one — it's the one that fits the problem, the team, and the next three years.",
     category: "Technology",
-    author: "MEbi Technologies",
+    author: "MEBI Technology",
     date: "2026-05-14",
     readTime: "6 min read",
     content: [
@@ -49,7 +49,7 @@ export const articles: Article[] = [
     excerpt:
       "Trust in software is built in small, often invisible decisions — load states, error messages, and consistency.",
     category: "Design",
-    author: "MEbi Technologies",
+    author: "MEBI Technology",
     date: "2026-04-22",
     readTime: "4 min read",
     content: [
@@ -64,7 +64,7 @@ export const articles: Article[] = [
     excerpt:
       "Most systems don't need to be rebuilt from scratch — they need an architecture that was designed to grow.",
     category: "Development",
-    author: "MEbi Technologies",
+    author: "MEBI Technology",
     date: "2026-03-10",
     readTime: "7 min read",
     content: [
@@ -79,7 +79,7 @@ export const articles: Article[] = [
     excerpt:
       "You don't need to write code to make good product decisions — you need a framework for asking the right questions.",
     category: "Business",
-    author: "MEbi Technologies",
+    author: "MEBI Technology",
     date: "2026-02-18",
     readTime: "5 min read",
     content: [

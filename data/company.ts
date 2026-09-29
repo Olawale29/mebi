@@ -1,23 +1,27 @@
-// Central, editable company record. Replace placeholder fields with real
-// data as it becomes available — nothing here should be treated as final.
-
 export const company = {
-  name: "MEbi Technologies",
-  shortName: "MEbi",
-  legalName: "MEbi Technologies",
-  tagline: "Innovative solutions in UI/UX, web & app development.",
-  positioning: "We design and build digital products that move businesses forward.",
-  url: "https://mebitechnologies.com",
-  foundedYear: null as number | null, // placeholder — add when confirmed
-  email: null as string | null, // placeholder — add real contact email
-  phone: null as string | null, // placeholder — add real contact phone
-  address: null as string | null, // placeholder — add real office address
+  name: "MEBI Technology",
+  shortName: "MEBI",
+  legalName: "MEBI Technology",
+  tagline: "Where innovation meets possibilities.",
+  positioning: "Technology partners who actually pay attention.",
+  url: "https://mebitechnology.com",
+  email: "info@mebitechnology.com",
+  phones: ["+234 814 236 3826", "+234 810 400 2933"],
+  address: "20 Zone 1 Road C, Ajoda New Town, Egbeda, Ibadan, Oyo State, Nigeria",
 };
 
 export const socialLinks = [
   {
     label: "Instagram",
     href: "https://www.instagram.com/mebitechnology/",
+  },
+  {
+    label: "X (Twitter)",
+    href: "https://x.com/mebitechnology",
+  },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/mebitechnology",
   },
   {
     label: "LinkedIn",

@@ -1,13 +1,12 @@
+import Link from "next/link";
 import { projects } from "@/data/projects";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Carousel } from "@/components/ui/Carousel";
 import { Button } from "@/components/ui/Button";
-import { ProjectCard } from "@/components/projects/ProjectCard";
 import { Reveal } from "@/components/ui/Reveal";
 
 export function SelectedWork() {
-  const featured = projects.slice(0, 4);
-
   return (
     <section className="py-24 md:py-32" id="work">
       <Container>
@@ -16,17 +15,44 @@ export function SelectedWork() {
             label="Selected Work"
             title="Digital experiences designed around real business problems."
           />
-          <Reveal delay={0.15} className="shrink-0">
-            <Button href="/work" variant="ghost" size="sm" className="whitespace-nowrap">
+          <Reveal delay={0.1} className="shrink-0">
+            <Button href="/work" variant="ghost" size="sm">
               View all work
             </Button>
           </Reveal>
         </div>
 
         <div className="mt-14">
-          {featured.map((project) => (
-            <ProjectCard key={project.slug} project={project} />
-          ))}
+          <Carousel itemClassName="w-[300px] sm:w-[380px]">
+            {projects.map((project) => (
+              <Link
+                key={project.slug}
+                href={`/work/${project.slug}`}
+                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-ink/10"
+              >
+                <div className="flex h-52 items-center justify-center bg-gradient-to-br from-primary-light/40 via-purple-soft/50 to-accent/20 transition-transform duration-700 ease-out group-hover:scale-[1.03]">
+                  <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-dark/60">
+                    {project.category}
+                  </span>
+                </div>
+                <div className="flex flex-1 flex-col p-6">
+                  <span className="text-sm text-muted">{project.index}</span>
+                  <h3 className="mt-2 text-xl font-semibold tracking-[-0.01em] text-ink transition-colors group-hover:text-primary">
+                    {project.name}
+                  </h3>
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
+                    {project.description}
+                  </p>
+                  <span className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-ink">
+                    View Case Study
+                    <span className="transition-transform duration-300 group-hover:translate-x-1">
+                      →
+                    </span>
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </Carousel>
         </div>
       </Container>
     </section>

@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about",
     "/team",
     "/services",
+    "/industries",
     "/work",
     "/process",
     "/insights",
@@ -18,9 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/terms",
   ];
 
-  const serviceRoutes = services
-    .filter((s) => s.hasDedicatedPage)
-    .map((s) => `/services/${s.slug}`);
+  const serviceRoutes = services.map((s) => `/services/${s.slug}`);
 
   const projectRoutes = projects.map((p) => `/work/${p.slug}`);
   const articleRoutes = articles.map((a) => `/insights/${a.slug}`);

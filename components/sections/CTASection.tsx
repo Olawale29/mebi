@@ -1,6 +1,7 @@
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
+import { company } from "@/data/company";
 
 export function CTASection() {
   return (
@@ -16,24 +17,32 @@ export function CTASection() {
       <Container className="relative text-center">
         <Reveal>
           <h2 className="mx-auto max-w-3xl text-balance text-[38px] font-semibold leading-[1.05] tracking-[-0.02em] sm:text-[52px] lg:text-[64px]">
-            Your next digital product starts here.
+            Let&apos;s build something that actually fits.
           </h2>
         </Reveal>
         <Reveal delay={0.08}>
           <p className="mx-auto mt-6 max-w-xl text-balance text-lg text-white/75 md:text-xl">
-            Have an idea, a business challenge or a product that needs to be
-            built? Let&apos;s turn it into something people can use.
+            Tell us what you&apos;re working on — we&apos;ll tell you honestly
+            whether we&apos;re the right fit before you spend a dollar.
           </p>
         </Reveal>
         <Reveal delay={0.15}>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <Button href="/contact" variant="light" size="md">
-              Start a Project
-            </Button>
-            <Button href="/contact" variant="outline-light" size="md">
-              Talk to MEbi
+              Book a Free Consultation
             </Button>
           </div>
+        </Reveal>
+        <Reveal delay={0.2}>
+          <p className="mt-8 text-sm text-white/60">
+            <a href={`mailto:${company.email}`} className="hover:text-white">
+              {company.email}
+            </a>
+            {" · "}
+            <a href={`tel:${company.phones[0].replace(/\s/g, "")}`} className="hover:text-white">
+              {company.phones[0]}
+            </a>
+          </p>
         </Reveal>
       </Container>
     </section>

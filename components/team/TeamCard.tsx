@@ -10,7 +10,7 @@ export function TeamCard({ member }: { member: TeamMember }) {
 
   return (
     <div>
-      <div className="relative aspect-[3/4] w-full overflow-hidden rounded-xl bg-purple-soft/30">
+      <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl bg-purple-soft/30">
         {member.photo ? (
           <Image
             src={member.photo}
@@ -31,16 +31,6 @@ export function TeamCard({ member }: { member: TeamMember }) {
       <p className="text-sm text-muted">{member.role}</p>
       {member.bio && (
         <p className="mt-2 text-sm leading-relaxed text-muted/80">{member.bio}</p>
-      )}
-      {member.linkedin && (
-        <a
-          href={member.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-2 inline-block text-sm text-primary hover:text-primary-dark"
-        >
-          LinkedIn ↗
-        </a>
       )}
     </div>
   );

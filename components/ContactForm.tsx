@@ -9,11 +9,8 @@ type FormState = {
   email: string;
   company: string;
   phone: string;
-  projectType: string;
-  budget: string;
-  timeline: string;
+  helpType: string;
   description: string;
-  source: string;
 };
 
 const initialState: FormState = {
@@ -21,24 +18,17 @@ const initialState: FormState = {
   email: "",
   company: "",
   phone: "",
-  projectType: "",
-  budget: "",
-  timeline: "",
+  helpType: "",
   description: "",
-  source: "",
 };
 
-const projectTypes = [
-  "UI/UX Design",
-  "Web Development",
-  "Mobile App Development",
-  "Custom Software",
+const helpTypes = [
+  "Software Development",
+  "IT Consulting",
+  "Digital Transformation",
+  "Data, Cloud & Cybersecurity",
   "Not sure yet",
 ];
-
-const budgets = ["Under $10k", "$10k – $25k", "$25k – $50k", "$50k+", "Not sure yet"];
-
-const timelines = ["ASAP", "1–3 months", "3–6 months", "Flexible"];
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -96,7 +86,7 @@ export function ContactForm() {
           ✓
         </span>
         <h2 className="mt-6 text-2xl font-semibold tracking-[-0.01em] text-ink md:text-3xl">
-          Thanks. We&apos;ve received your project brief.
+          Thanks. We&apos;ve received your message.
         </h2>
         <p className="mt-3 text-muted">
           We&apos;ll be in touch shortly to discuss next steps.
@@ -116,7 +106,7 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-8">
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-        <Field label="Name" error={errors.name} required>
+        <Field label="Full Name" error={errors.name} required>
           <input
             type="text"
             value={form.name}
@@ -125,7 +115,7 @@ export function ContactForm() {
             aria-invalid={!!errors.name}
           />
         </Field>
-        <Field label="Email" error={errors.email} required>
+        <Field label="Email Address" error={errors.email} required>
           <input
             type="email"
             value={form.email}
@@ -134,7 +124,7 @@ export function ContactForm() {
             aria-invalid={!!errors.email}
           />
         </Field>
-        <Field label="Company">
+        <Field label="Company / Organization">
           <input
             type="text"
             value={form.company}
@@ -142,7 +132,7 @@ export function ContactForm() {
             className={inputClass}
           />
         </Field>
-        <Field label="Phone">
+        <Field label="Phone Number">
           <input
             type="tel"
             value={form.phone}
@@ -152,67 +142,28 @@ export function ContactForm() {
         </Field>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-        <Field label="Project Type">
-          <select
-            value={form.projectType}
-            onChange={(e) => update("projectType", e.target.value)}
-            className={inputClass}
-          >
-            <option value="">Select</option>
-            {projectTypes.map((t) => (
-              <option key={t} value={t}>
-                {t}
-              </option>
-            ))}
-          </select>
-        </Field>
-        <Field label="Budget Range">
-          <select
-            value={form.budget}
-            onChange={(e) => update("budget", e.target.value)}
-            className={inputClass}
-          >
-            <option value="">Select</option>
-            {budgets.map((b) => (
-              <option key={b} value={b}>
-                {b}
-              </option>
-            ))}
-          </select>
-        </Field>
-        <Field label="Timeline">
-          <select
-            value={form.timeline}
-            onChange={(e) => update("timeline", e.target.value)}
-            className={inputClass}
-          >
-            <option value="">Select</option>
-            {timelines.map((t) => (
-              <option key={t} value={t}>
-                {t}
-              </option>
-            ))}
-          </select>
-        </Field>
-      </div>
+      <Field label="What do you need help with?">
+        <select
+          value={form.helpType}
+          onChange={(e) => update("helpType", e.target.value)}
+          className={inputClass}
+        >
+          <option value="">Select</option>
+          {helpTypes.map((t) => (
+            <option key={t} value={t}>
+              {t}
+            </option>
+          ))}
+        </select>
+      </Field>
 
-      <Field label="Project Description" error={errors.description} required>
+      <Field label="Tell us about your project" error={errors.description} required>
         <textarea
           rows={5}
           value={form.description}
           onChange={(e) => update("description", e.target.value)}
           className={inputClass}
           aria-invalid={!!errors.description}
-        />
-      </Field>
-
-      <Field label="How did you hear about us?">
-        <input
-          type="text"
-          value={form.source}
-          onChange={(e) => update("source", e.target.value)}
-          className={inputClass}
         />
       </Field>
 

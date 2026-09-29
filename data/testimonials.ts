@@ -13,7 +13,7 @@ export type Testimonial = {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "Sample testimonial copy — replace with a real client quote. This space is reserved for feedback on how MEbi approached discovery, design and delivery.",
+      "Sample testimonial copy — replace with a real client quote. This space is reserved for feedback on how MEBI approached discovery, design and delivery.",
     name: "Client Name",
     role: "Role",
     company: "Company",

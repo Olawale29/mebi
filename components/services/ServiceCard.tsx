@@ -4,11 +4,9 @@ import Link from "next/link";
 import type { Service } from "@/data/services";
 
 export function ServiceCard({ service }: { service: Service }) {
-  const href = service.hasDedicatedPage ? `/services/${service.slug}` : "/services";
-
   return (
     <Link
-      href={href}
+      href={`/services/${service.slug}`}
       className="group grid grid-cols-1 gap-6 border-t border-ink/10 py-10 transition-colors first:border-t-0 md:grid-cols-[80px_1fr_1fr_60px] md:items-center md:gap-8 md:py-12"
     >
       <span className="text-sm font-medium text-muted">{service.number}</span>

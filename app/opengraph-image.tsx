@@ -20,7 +20,7 @@ export default async function OpengraphImage() {
         }}
       >
         <div style={{ display: "flex", fontSize: 40, fontWeight: 700, color: "#4DBEAB" }}>
-          MEbi.
+          MEBI.
         </div>
         <div
           style={{

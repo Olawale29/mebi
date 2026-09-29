@@ -27,7 +27,7 @@ export const projects: Project[] = [
     industry: "Financial Services",
     description:
       "A digital banking dashboard concept designed for clarity under high-frequency, high-stakes use.",
-    services: ["UI/UX Design", "Web Development"],
+    services: ["Software & Solution Development"],
     technology: ["Next.js", "TypeScript", "PostgreSQL"],
     timeline: "Illustrative — 10 weeks",
     challenge:
@@ -48,7 +48,7 @@ export const projects: Project[] = [
     industry: "Logistics & Supply Chain",
     description:
       "An internal operations platform concept for coordinating fleet, inventory and delivery workflows in one place.",
-    services: ["Custom Software", "UI/UX Design"],
+    services: ["Software & Solution Development", "Digital Transformation & Automation"],
     technology: ["React", "Node.js", "MySQL"],
     timeline: "Illustrative — 14 weeks",
     challenge:
@@ -69,7 +69,7 @@ export const projects: Project[] = [
     industry: "Healthcare",
     description:
       "A patient-facing mobile app concept for scheduling care and reviewing records without friction.",
-    services: ["UI/UX Design", "Mobile App Development"],
+    services: ["Software & Solution Development"],
     technology: ["React Native", "Node.js"],
     timeline: "Illustrative — 12 weeks",
     challenge:
@@ -90,7 +90,7 @@ export const projects: Project[] = [
     industry: "Retail & E-commerce",
     description:
       "A storefront and checkout experience concept designed to reduce friction between browsing and purchase.",
-    services: ["Web Development", "UI/UX Design"],
+    services: ["Software & Solution Development"],
     technology: ["Next.js", "Node.js", "PostgreSQL"],
     timeline: "Illustrative — 8 weeks",
     challenge:
@@ -111,7 +111,7 @@ export const projects: Project[] = [
     industry: "Professional Services",
     description:
       "A CRM and workflow automation concept for service businesses managing clients, projects and invoicing.",
-    services: ["Custom Software", "Product Strategy"],
+    services: ["Software & Solution Development", "IT Consulting"],
     technology: ["React", "Laravel", "MySQL"],
     timeline: "Illustrative — 16 weeks",
     challenge:

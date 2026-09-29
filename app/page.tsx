@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
 import { Hero } from "@/components/sections/Hero";
-import { SelectedWork } from "@/components/sections/SelectedWork";
+import { TrustStrip } from "@/components/sections/TrustStrip";
 import { WhatWeDo } from "@/components/sections/WhatWeDo";
-import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { WhyMebi } from "@/components/sections/WhyMebi";
 import { ProcessSection } from "@/components/sections/ProcessSection";
-import { TechnologySection } from "@/components/sections/TechnologySection";
+import { IndustriesSection } from "@/components/sections/IndustriesSection";
+import { SelectedWork } from "@/components/sections/SelectedWork";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { CTASection } from "@/components/sections/CTASection";
 
 export const metadata: Metadata = buildMetadata({
-  title: "MEbi Technologies",
+  title: "MEBI Technology",
   description:
-    "MEbi Technologies designs and engineers digital products — websites, applications and software — that help ambitious businesses operate, compete and grow.",
+    "MEBI Technology builds custom software, cloud, and digital transformation solutions for growing organizations across Africa and beyond. Where innovation meets possibilities.",
   path: "/",
 });
 
@@ -21,12 +21,12 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <SelectedWork />
+      <TrustStrip />
       <WhatWeDo />
-      <ServicesGrid />
       <WhyMebi />
       <ProcessSection />
-      <TechnologySection />
+      <IndustriesSection />
+      <SelectedWork />
       <Testimonials />
       <CTASection />
     </>

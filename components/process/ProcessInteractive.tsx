@@ -63,9 +63,6 @@ export function ProcessInteractive({ dark = false }: { dark?: boolean }) {
             <p className={cn("mt-4 leading-relaxed", dark ? "text-white/65" : "text-muted")}>
               {step.description}
             </p>
-            <p className={cn("mt-4 text-sm", dark ? "text-white/40" : "text-muted/70")}>
-              {step.detail}
-            </p>
             <div className="mt-8 flex gap-2">
               {processSteps.map((_, i) => (
                 <span
