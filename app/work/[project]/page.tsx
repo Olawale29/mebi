@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionLabel } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
+import { ProjectCover } from "@/components/projects/ProjectCover";
 import { CTASection } from "@/components/sections/CTASection";
 
 export function generateStaticParams() {
@@ -75,10 +76,8 @@ export default async function CaseStudyPage({
       <section className="pb-20">
         <Container>
           <Reveal>
-            <div className="flex h-[340px] w-full items-center justify-center rounded-2xl bg-gradient-to-br from-primary-light/40 via-purple-soft/50 to-accent/20 md:h-[480px]">
-              <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary-dark/60">
-                {project.category}
-              </span>
+            <div className="h-[340px] w-full overflow-hidden rounded-2xl md:h-[480px]">
+              <ProjectCover slug={project.slug} size="lg" />
             </div>
           </Reveal>
         </Container>

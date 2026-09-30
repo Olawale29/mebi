@@ -5,6 +5,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Carousel } from "@/components/ui/Carousel";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
+import { ProjectCover } from "@/components/projects/ProjectCover";
 
 export function SelectedWork() {
   return (
@@ -30,10 +31,8 @@ export function SelectedWork() {
                 href={`/work/${project.slug}`}
                 className="group flex h-full flex-col overflow-hidden rounded-2xl border border-ink/10"
               >
-                <div className="flex h-52 items-center justify-center bg-gradient-to-br from-primary-light/40 via-purple-soft/50 to-accent/20 transition-transform duration-700 ease-out group-hover:scale-[1.03]">
-                  <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-dark/60">
-                    {project.category}
-                  </span>
+                <div className="h-52 transition-transform duration-700 ease-out group-hover:scale-[1.03]">
+                  <ProjectCover slug={project.slug} />
                 </div>
                 <div className="flex flex-1 flex-col p-6">
                   <span className="text-sm text-muted">{project.index}</span>

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import type { Project } from "@/data/projects";
+import { ProjectCover } from "@/components/projects/ProjectCover";
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
@@ -47,24 +48,11 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
       </div>
 
-      <div className="mt-6 h-64 w-full overflow-hidden rounded-2xl bg-gradient-to-br from-primary-light/40 via-purple-soft/50 to-accent/20 md:h-80">
-        <div className="flex h-full w-full items-center justify-center transition-transform duration-700 ease-out group-hover:scale-[1.04]">
-          <ProjectGlyph category={project.category} />
+      <div className="mt-6 h-64 w-full overflow-hidden rounded-2xl md:h-80">
+        <div className="h-full w-full transition-transform duration-700 ease-out group-hover:scale-[1.04]">
+          <ProjectCover slug={project.slug} />
         </div>
       </div>
     </Link>
-  );
-}
-
-function ProjectGlyph({ category }: { category: Project["category"] }) {
-  return (
-    <div className="flex flex-col items-center gap-3 text-primary-dark/70">
-      <span className="text-xs font-semibold uppercase tracking-[0.2em]">{category}</span>
-      <div className="flex gap-2">
-        <span className="h-2 w-2 rounded-full bg-primary/40" />
-        <span className="h-2 w-2 rounded-full bg-accent/60" />
-        <span className="h-2 w-2 rounded-full bg-primary/40" />
-      </div>
-    </div>
   );
 }
