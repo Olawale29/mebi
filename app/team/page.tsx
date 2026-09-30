@@ -60,13 +60,13 @@ export default function TeamPage() {
         </Container>
       </section>
 
-      <section className="border-t border-ink/10 py-24 md:py-32">
+      <section className="border-t border-ink/10 bg-gradient-to-b from-purple-soft/20 via-purple-soft/5 to-transparent py-24 md:py-32">
         <Container>
           <SectionHeading label="How We Work Together" title="Small team, high ownership." />
           <div className="mt-14 grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-3">
             {values.map((v, i) => (
               <Reveal key={v.title} delay={0.06 * i}>
-                <div className="border-t border-ink/10 pt-6">
+                <div className="border-t border-primary/20 pt-6">
                   <h3 className="text-lg font-semibold text-ink">{v.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted">{v.description}</p>
                 </div>

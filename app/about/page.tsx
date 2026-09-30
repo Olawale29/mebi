@@ -119,7 +119,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="border-t border-ink/10 py-24 md:py-32">
+      <section className="border-t border-ink/10 bg-gradient-to-b from-purple-soft/20 via-purple-soft/5 to-transparent py-24 md:py-32">
         <Container>
           <SectionHeading label="Our Values" title="Creating lasting impact through technology." />
           <div className="mt-14 grid grid-cols-1 gap-px overflow-hidden rounded-2xl bg-primary/20 sm:grid-cols-2 lg:grid-cols-3">

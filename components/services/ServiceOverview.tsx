@@ -4,7 +4,7 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function ServiceOverview({ service }: { service: Service }) {
   return (
-    <section className="py-24 md:py-32">
+    <section className="bg-gradient-to-b from-purple-soft/20 via-purple-soft/5 to-transparent py-24 md:py-32">
       <Container>
         <div className={`grid grid-cols-1 gap-12 ${service.builtWith ? "lg:grid-cols-2" : ""} lg:gap-16`}>
           <Reveal>

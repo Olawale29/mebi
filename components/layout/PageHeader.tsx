@@ -19,12 +19,18 @@ export function PageHeader({
   return (
     <section
       className={cn(
-        "pt-40 pb-20 md:pt-48 md:pb-28",
-        dark ? "bg-surface-dark text-white" : "bg-bg text-ink",
+        "relative overflow-hidden pt-40 pb-20 md:pt-48 md:pb-28",
+        dark ? "bg-surface-dark text-white" : "bg-gradient-to-br from-purple-soft/35 via-bg to-bg text-ink",
         className
       )}
     >
-      <Container>
+      {!dark && (
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-primary-light/25 blur-3xl"
+        />
+      )}
+      <Container className="relative">
         <div className="max-w-3xl">
           {label && (
             <Reveal>

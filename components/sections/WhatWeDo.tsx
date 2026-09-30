@@ -7,7 +7,10 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function WhatWeDo() {
   return (
-    <section className="border-t border-ink/10 py-24 md:py-32" id="what-we-do">
+    <section
+      className="border-t border-ink/10 bg-gradient-to-b from-purple-soft/25 via-purple-soft/8 to-transparent py-24 md:py-32"
+      id="what-we-do"
+    >
       <Container>
         <SectionHeading label="What We Do" title="Four ways we help you move faster." />
 

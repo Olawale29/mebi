@@ -23,7 +23,7 @@ export default function ServicesPage() {
         description="Whether you need a single custom build or an end-to-end digital transformation, every MEBI engagement runs through the same disciplined process — and gets the same level of attention."
       />
 
-      <section className="pb-24 md:pb-32">
+      <section className="bg-gradient-to-b from-purple-soft/20 via-purple-soft/5 to-transparent pb-24 md:pb-32">
         <Container>
           <div className="flex flex-col gap-20 md:gap-28">
             {services.map((service, i) => (

@@ -9,7 +9,10 @@ import { ProjectCover } from "@/components/projects/ProjectCover";
 
 export function SelectedWork() {
   return (
-    <section className="py-24 md:py-32" id="work">
+    <section
+      className="bg-gradient-to-b from-purple-soft/25 via-purple-soft/8 to-transparent py-24 md:py-32"
+      id="work"
+    >
       <Container>
         <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
           <SectionHeading

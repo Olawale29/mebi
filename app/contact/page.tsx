@@ -25,7 +25,7 @@ export default function ContactPage() {
       <section className="pb-24 md:pb-32">
         <Container>
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
-            <div>
+            <div className="rounded-2xl border border-primary/20 bg-gradient-to-br from-purple-soft/25 via-purple-soft/8 to-transparent p-8">
               <Reveal>
                 <div>
                   <h2 className="text-xs font-semibold uppercase tracking-[0.16em] text-muted">

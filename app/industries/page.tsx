@@ -21,7 +21,7 @@ export default function IndustriesPage() {
         title="Every industry has different problems. We don't solve them the same way."
       />
 
-      <section className="pb-24 md:pb-32">
+      <section className="bg-gradient-to-b from-purple-soft/20 via-purple-soft/5 to-transparent pb-24 md:pb-32">
         <Container>
           <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl bg-primary/20 sm:grid-cols-2 lg:grid-cols-4">
             {industries.map((industry, i) => (
