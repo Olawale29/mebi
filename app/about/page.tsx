@@ -122,10 +122,10 @@ export default function AboutPage() {
       <section className="border-t border-ink/10 py-24 md:py-32">
         <Container>
           <SectionHeading label="Our Values" title="Creating lasting impact through technology." />
-          <div className="mt-14 grid grid-cols-1 gap-px overflow-hidden rounded-2xl bg-ink/10 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid grid-cols-1 gap-px overflow-hidden rounded-2xl bg-primary/20 sm:grid-cols-2 lg:grid-cols-3">
             {values.map((v, i) => (
               <Reveal key={v.title} delay={0.05 * i}>
-                <div className="h-full bg-bg p-8">
+                <div className="h-full bg-surface-tint p-8">
                   <h3 className="text-lg font-semibold tracking-[-0.01em] text-ink">{v.title}</h3>
                   <p className="mt-3 text-sm text-muted leading-relaxed">{v.description}</p>
                 </div>

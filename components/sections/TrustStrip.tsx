@@ -12,12 +12,12 @@ const sectors = [
 
 export function TrustStrip() {
   return (
-    <section className="border-t border-ink/10 py-12">
+    <section className="border-t border-primary/12 bg-purple-soft/10 py-12">
       <Container>
         <Reveal>
           <p className="text-center text-sm text-muted">
             Proudly partnering with organizations building the future of{" "}
-            <span className="text-ink">
+            <span className="text-primary-dark font-medium">
               {sectors.map((s, i) => (
                 <span key={s}>
                   {s}

@@ -189,7 +189,7 @@ export function ContactForm() {
 }
 
 const inputClass =
-  "w-full rounded-lg border border-ink/15 bg-white px-4 py-3 text-ink placeholder:text-muted/50 transition-colors focus:border-primary focus:outline-none";
+  "w-full rounded-lg border border-primary/15 bg-white px-4 py-3 text-ink placeholder:text-muted/50 transition-colors focus:border-primary focus:outline-none";
 
 function Field({
   label,

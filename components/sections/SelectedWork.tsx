@@ -29,7 +29,7 @@ export function SelectedWork() {
               <Link
                 key={project.slug}
                 href={`/work/${project.slug}`}
-                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-ink/10"
+                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-primary/20"
               >
                 <div className="h-52 transition-transform duration-700 ease-out group-hover:scale-[1.03]">
                   <ProjectCover slug={project.slug} />

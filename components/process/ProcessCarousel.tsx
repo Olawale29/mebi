@@ -10,10 +10,10 @@ export function ProcessCarousel({ dark = false }: { dark?: boolean }) {
           key={step.number}
           className={cn(
             "flex h-full flex-col rounded-2xl border p-7",
-            dark ? "border-white/10 bg-white/[0.03]" : "border-ink/10 bg-white"
+            dark ? "border-white/10 bg-white/[0.03]" : "border-primary/20 bg-surface-tint"
           )}
         >
-          <span className={cn("text-4xl font-semibold tracking-[-0.02em]", dark ? "text-white/20" : "text-ink/15")}>
+          <span className={cn("text-4xl font-semibold tracking-[-0.02em]", dark ? "text-white/20" : "text-primary/25")}>
             {step.number}
           </span>
           <h3 className={cn("mt-5 text-xl font-semibold tracking-[-0.01em]", dark ? "text-white" : "text-ink")}>

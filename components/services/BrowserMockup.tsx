@@ -50,13 +50,13 @@ export function DashboardContent() {
       <div>
         <div className="grid grid-cols-3 gap-4">
           {["Revenue", "Active Users", "Conversion"].map((label) => (
-            <div key={label} className="rounded-xl border border-ink/10 p-4">
+            <div key={label} className="rounded-xl border border-primary/12 p-4">
               <p className="text-xs text-muted">{label}</p>
               <p className="mt-2 text-2xl font-semibold text-ink">—</p>
             </div>
           ))}
         </div>
-        <div className="mt-4 flex h-40 items-end gap-2 rounded-xl border border-ink/10 p-4">
+        <div className="mt-4 flex h-40 items-end gap-2 rounded-xl border border-primary/12 p-4">
           {[30, 55, 40, 70, 60, 85, 50, 90, 65].map((h, i) => (
             <span
               key={i}

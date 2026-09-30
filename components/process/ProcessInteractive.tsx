@@ -20,7 +20,7 @@ export function ProcessInteractive({ dark = false }: { dark?: boolean }) {
               onClick={() => setActive(i)}
               className={cn(
                 "flex w-full items-center gap-6 border-t py-6 text-left transition-colors first:border-t-0",
-                dark ? "border-white/10" : "border-ink/10"
+                dark ? "border-white/10" : "border-primary/20"
               )}
               aria-pressed={isActive}
             >
@@ -45,7 +45,7 @@ export function ProcessInteractive({ dark = false }: { dark?: boolean }) {
         })}
       </div>
 
-      <div className={cn("rounded-2xl border p-8 md:p-10", dark ? "border-white/10 bg-white/[0.03]" : "border-ink/10 bg-white")}>
+      <div className={cn("rounded-2xl border p-8 md:p-10", dark ? "border-white/10 bg-white/[0.03]" : "border-primary/20 bg-surface-tint")}>
         <AnimatePresence mode="wait">
           <motion.div
             key={step.number}
@@ -54,7 +54,7 @@ export function ProcessInteractive({ dark = false }: { dark?: boolean }) {
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
           >
-            <span className={cn("text-6xl font-semibold tracking-[-0.02em] md:text-8xl", dark ? "text-white/15" : "text-ink/10")}>
+            <span className={cn("text-6xl font-semibold tracking-[-0.02em] md:text-8xl", dark ? "text-white/15" : "text-primary/15")}>
               {step.number}
             </span>
             <h3 className={cn("mt-6 text-2xl font-semibold tracking-[-0.01em] md:text-3xl", dark ? "text-white" : "text-ink")}>
@@ -69,7 +69,7 @@ export function ProcessInteractive({ dark = false }: { dark?: boolean }) {
                   key={i}
                   className={cn(
                     "h-1 flex-1 rounded-full transition-colors",
-                    i === active ? "bg-accent" : dark ? "bg-white/10" : "bg-ink/10"
+                    i === active ? "bg-accent" : dark ? "bg-white/10" : "bg-primary/12"
                   )}
                 />
               ))}

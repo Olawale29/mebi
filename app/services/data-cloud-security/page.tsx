@@ -50,10 +50,10 @@ export default function DataCloudSecurityPage() {
               Security built in from the start.
             </h2>
           </Reveal>
-          <div className="mt-12 grid grid-cols-1 gap-px overflow-hidden rounded-2xl bg-ink/10 sm:grid-cols-2">
+          <div className="mt-12 grid grid-cols-1 gap-px overflow-hidden rounded-2xl bg-primary/20 sm:grid-cols-2">
             {pillars.map((p, i) => (
               <Reveal key={p.title} delay={0.06 * i}>
-                <div className="h-full bg-bg p-7">
+                <div className="h-full bg-surface-tint p-7">
                   <p className="text-lg font-semibold text-ink">{p.title}</p>
                   <p className="mt-2 text-sm text-muted leading-relaxed">{p.description}</p>
                 </div>

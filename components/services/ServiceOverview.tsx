@@ -32,7 +32,7 @@ export function ServiceOverview({ service }: { service: Service }) {
                   {service.builtWith.map((tech) => (
                     <span
                       key={tech}
-                      className="rounded-full border border-ink/10 px-3.5 py-1.5 text-xs text-muted"
+                      className="rounded-full border border-primary/15 px-3.5 py-1.5 text-xs text-muted"
                     >
                       {tech}
                     </span>

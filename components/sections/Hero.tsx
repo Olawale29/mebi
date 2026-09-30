@@ -11,6 +11,14 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden bg-bg pt-40 pb-24 md:pt-52 md:pb-32">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -left-20 top-10 h-96 w-96 rounded-full bg-purple-soft/40 blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute right-0 top-1/3 h-80 w-80 rounded-full bg-accent/10 blur-3xl"
+      />
       <Container className="relative">
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
           <div>

@@ -46,10 +46,10 @@ export default function ItConsultingPage() {
 
       <section className="pb-24 md:pb-32">
         <Container>
-          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl bg-ink/10 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl bg-primary/20 sm:grid-cols-2">
             {pillars.map((p, i) => (
               <Reveal key={p.title} delay={0.06 * i}>
-                <div className="h-full bg-white p-8 md:p-10">
+                <div className="h-full bg-surface-tint p-8 md:p-10">
                   <span className="text-sm font-medium text-muted">
                     {String(i + 1).padStart(2, "0")}
                   </span>

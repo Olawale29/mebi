@@ -10,6 +10,7 @@
   --color-muted: #64578b;
   --color-ink: #120e24;
   --color-surface: #ffffff;
+  --color-surface-tint: #faf8fd;
   --color-surface-dark: #150a33;
   --color-surface-dark-2: #1d1046;
   --color-border-soft: rgba(18, 14, 36, 0.1);
@@ -26,6 +27,7 @@
   --color-muted: var(--color-muted);
   --color-ink: var(--color-ink);
   --color-surface: var(--color-surface);
+  --color-surface-tint: var(--color-surface-tint);
   --color-surface-dark: var(--color-surface-dark);
   --color-surface-dark-2: var(--color-surface-dark-2);
 

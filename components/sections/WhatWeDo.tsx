@@ -17,9 +17,9 @@ export function WhatWeDo() {
               <Link
                 key={service.slug}
                 href={`/services/${service.slug}`}
-                className="group flex h-full flex-col rounded-2xl border border-ink/10 bg-white p-8 transition-colors hover:border-primary/40"
+                className="group flex h-full flex-col rounded-2xl border border-primary/20 bg-surface-tint p-8 transition-colors hover:border-primary/40"
               >
-                <span className="text-sm font-medium text-muted">{service.number}</span>
+                <span className="text-sm font-semibold text-primary">{service.number}</span>
                 <h3 className="mt-4 text-xl font-semibold tracking-[-0.01em] text-ink transition-colors group-hover:text-primary">
                   {service.title}
                 </h3>

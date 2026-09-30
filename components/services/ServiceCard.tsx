@@ -17,7 +17,7 @@ export function ServiceCard({ service }: { service: Service }) {
 
       <p className="text-muted leading-relaxed">{service.shortDescription}</p>
 
-      <span className="flex h-11 w-11 items-center justify-center rounded-full border border-ink/15 text-ink transition-all duration-300 group-hover:border-primary group-hover:bg-primary group-hover:text-white md:justify-self-end">
+      <span className="flex h-11 w-11 items-center justify-center rounded-full border border-primary/20 text-ink transition-all duration-300 group-hover:border-primary group-hover:bg-primary group-hover:text-white md:justify-self-end">
         <span className="transition-transform duration-300 group-hover:translate-x-0.5">
           →
         </span>

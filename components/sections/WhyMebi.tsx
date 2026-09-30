@@ -29,35 +29,43 @@ const principles = [
 
 export function WhyMebi() {
   return (
-    <section className="border-t border-ink/10 py-24 md:py-32">
-      <Container>
+    <section className="relative overflow-hidden border-t border-white/10 bg-surface-dark py-24 text-white md:py-32">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -left-32 top-0 h-80 w-80 rounded-full bg-primary-light/20 blur-3xl"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-accent/10 blur-3xl"
+      />
+      <Container className="relative">
         <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
           <div>
             <Reveal>
-              <SectionLabel>Why Organizations Choose MEBI</SectionLabel>
+              <SectionLabel className="text-purple-soft">Why Organizations Choose MEBI</SectionLabel>
             </Reveal>
             <Reveal delay={0.05}>
-              <h2 className="mt-5 max-w-2xl text-balance text-[34px] font-semibold leading-[1.05] tracking-[-0.02em] text-ink sm:text-[44px] lg:text-[48px]">
+              <h2 className="mt-5 max-w-2xl text-balance text-[34px] font-semibold leading-[1.05] tracking-[-0.02em] text-white sm:text-[44px] lg:text-[48px]">
                 We&apos;re not trying to be everyone&apos;s technology partner.
               </h2>
             </Reveal>
           </div>
           <Reveal delay={0.1} className="shrink-0">
-            <Button href="/process" variant="ghost" size="sm">
+            <Button href="/process" variant="outline-light" size="sm">
               See Our Full Process
             </Button>
           </Reveal>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-px overflow-hidden rounded-2xl bg-ink/10 sm:grid-cols-2">
+        <div className="mt-14 grid grid-cols-1 gap-px overflow-hidden rounded-2xl bg-white/10 sm:grid-cols-2">
           {principles.map((p, i) => (
             <Reveal key={p.number} delay={0.08 * i}>
-              <div className="h-full bg-bg p-8 md:p-10">
-                <span className="text-sm font-medium text-muted">{p.number}</span>
-                <h3 className="mt-4 text-xl font-semibold tracking-[-0.01em] text-ink md:text-2xl">
+              <div className="h-full bg-white/[0.03] p-8 md:p-10">
+                <span className="text-sm font-medium text-white/40">{p.number}</span>
+                <h3 className="mt-4 text-xl font-semibold tracking-[-0.01em] text-white md:text-2xl">
                   {p.title}
                 </h3>
-                <p className="mt-3 text-muted leading-relaxed">{p.description}</p>
+                <p className="mt-3 text-white/60 leading-relaxed">{p.description}</p>
               </div>
             </Reveal>
           ))}

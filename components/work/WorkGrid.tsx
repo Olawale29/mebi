@@ -26,7 +26,7 @@ export function WorkGrid() {
               "rounded-full border px-5 py-2.5 text-sm font-medium transition-colors",
               active === f
                 ? "border-primary bg-primary text-white"
-                : "border-ink/15 text-muted hover:text-ink"
+                : "border-primary/20 text-muted hover:text-ink"
             )}
           >
             {f}

@@ -31,14 +31,14 @@ export function ProjectCard({ project }: { project: Project }) {
             {project.services.map((s) => (
               <span
                 key={s}
-                className="rounded-full border border-ink/10 px-3 py-1 text-xs text-muted"
+                className="rounded-full border border-primary/15 px-3 py-1 text-xs text-muted"
               >
                 {s}
               </span>
             ))}
           </div>
           <motion.span
-            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-ink/15 text-ink transition-colors group-hover:border-primary group-hover:bg-primary group-hover:text-white"
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-primary/20 text-ink transition-colors group-hover:border-primary group-hover:bg-primary group-hover:text-white"
             aria-hidden
           >
             <span className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">

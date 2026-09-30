@@ -23,10 +23,10 @@ export default function IndustriesPage() {
 
       <section className="pb-24 md:pb-32">
         <Container>
-          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl bg-ink/10 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl bg-primary/20 sm:grid-cols-2 lg:grid-cols-4">
             {industries.map((industry, i) => (
               <Reveal key={industry.name} delay={0.04 * i}>
-                <div className="h-full bg-white p-7">
+                <div className="h-full bg-surface-tint p-7">
                   <h3 className="text-lg font-semibold tracking-[-0.01em] text-ink">
                     {industry.name}
                   </h3>

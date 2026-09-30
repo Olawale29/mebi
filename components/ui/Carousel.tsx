@@ -74,7 +74,7 @@ export function Carousel({
               "flex h-11 w-11 items-center justify-center rounded-full border transition-colors disabled:opacity-30",
               dark
                 ? "border-white/20 text-white hover:bg-white/10"
-                : "border-ink/15 text-ink hover:bg-ink hover:text-white"
+                : "border-primary/20 text-ink hover:bg-ink hover:text-white"
             )}
           >
             ←
@@ -88,7 +88,7 @@ export function Carousel({
               "flex h-11 w-11 items-center justify-center rounded-full border transition-colors disabled:opacity-30",
               dark
                 ? "border-white/20 text-white hover:bg-white/10"
-                : "border-ink/15 text-ink hover:bg-ink hover:text-white"
+                : "border-primary/20 text-ink hover:bg-ink hover:text-white"
             )}
           >
             →

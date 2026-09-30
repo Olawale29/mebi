@@ -10,7 +10,7 @@ export function Badge({
   tone?: "light" | "dark" | "accent";
 }) {
   const tones: Record<string, string> = {
-    light: "border-ink/15 text-ink/70 bg-white",
+    light: "border-primary/15 text-ink/70 bg-surface-tint",
     dark: "border-white/15 text-white/80 bg-white/5",
     accent: "border-accent/30 text-accent bg-accent/10",
   };

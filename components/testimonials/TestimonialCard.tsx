@@ -2,7 +2,7 @@ import type { Testimonial } from "@/data/testimonials";
 
 export function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   return (
-    <figure className="flex h-full flex-col justify-between rounded-2xl border border-ink/10 bg-white p-8 md:p-10">
+    <figure className="flex h-full flex-col justify-between rounded-2xl border border-primary/20 bg-surface-tint p-8 md:p-10">
       <div>
         {testimonial.isPlaceholder && (
           <span className="mb-5 inline-block rounded-full bg-purple-soft/40 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-primary-dark">
