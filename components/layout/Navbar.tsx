@@ -9,11 +9,16 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { MobileMenu } from "@/components/layout/MobileMenu";
 import { Logo } from "@/components/ui/Logo";
+import { cn } from "@/lib/utils";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
+
+  // The homepage Hero is a dark, full-bleed gradient — the unscrolled nav
+  // needs light text/logo there, unlike every other page's light header.
+  const onDarkHero = pathname === "/" && !scrolled;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -46,7 +51,7 @@ export function Navbar() {
         >
           <Container className="flex items-center justify-between">
             <Link href="/" aria-label="MEBI Technology — Home">
-              <Logo type="mark" className="h-8 md:h-9" />
+              <Logo type="mark" variant={onDarkHero ? "white" : "color"} className="h-8 md:h-9" />
             </Link>
 
             <nav
@@ -60,9 +65,16 @@ export function Navbar() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`relative text-[15px] font-medium transition-colors ${
-                      active ? "text-ink" : "text-muted hover:text-ink"
-                    }`}
+                    className={cn(
+                      "relative text-[15px] font-medium transition-colors",
+                      onDarkHero
+                        ? active
+                          ? "text-white"
+                          : "text-white/70 hover:text-white"
+                        : active
+                          ? "text-ink"
+                          : "text-muted hover:text-ink"
+                    )}
                   >
                     {item.label}
                     {active && (
@@ -74,7 +86,7 @@ export function Navbar() {
             </nav>
 
             <div className="hidden lg:block">
-              <Button href="/contact" variant="primary" size="sm">
+              <Button href="/contact" variant={onDarkHero ? "light" : "primary"} size="sm">
                 Start a Project
               </Button>
             </div>
@@ -82,14 +94,22 @@ export function Navbar() {
             <button
               type="button"
               onClick={() => setMobileOpen(true)}
-              className="flex items-center gap-2 text-sm font-medium text-ink lg:hidden"
+              className={cn(
+                "flex items-center gap-2 text-sm font-medium lg:hidden",
+                onDarkHero ? "text-white" : "text-ink"
+              )}
               aria-label="Open menu"
               aria-expanded={mobileOpen}
             >
               Menu
-              <span className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 rounded-full border border-ink/15">
-                <span className="h-[1.5px] w-4 bg-ink" />
-                <span className="h-[1.5px] w-4 bg-ink" />
+              <span
+                className={cn(
+                  "flex h-9 w-9 flex-col items-center justify-center gap-1.5 rounded-full border",
+                  onDarkHero ? "border-white/30" : "border-ink/15"
+                )}
+              >
+                <span className={cn("h-[1.5px] w-4", onDarkHero ? "bg-white" : "bg-ink")} />
+                <span className={cn("h-[1.5px] w-4", onDarkHero ? "bg-white" : "bg-ink")} />
               </span>
             </button>
           </Container>

@@ -8,10 +8,12 @@ export const primaryNav = [
 
 export const footerNav = {
   services: [
-    { label: "Software & Solution Development", href: "/services/software-development" },
-    { label: "IT Consulting & Capacity Building", href: "/services/it-consulting" },
-    { label: "Digital Transformation & Automation", href: "/services/digital-transformation" },
-    { label: "Data, Cloud & Cybersecurity", href: "/services/data-cloud-security" },
+    { label: "Websites & Web Development", href: "/services/web-development" },
+    { label: "Software & Application Development", href: "/services/software-development" },
+    { label: "UI/UX & Product Design", href: "/services/ui-ux-design" },
+    { label: "Business Automation & Digital Transformation", href: "/services/digital-transformation" },
+    { label: "Maintenance & Support", href: "/services/maintenance-support" },
+    { label: "Add-ons", href: "/services/add-ons" },
   ],
   company: [
     { label: "About", href: "/about" },

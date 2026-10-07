@@ -6,24 +6,37 @@ import { Button } from "@/components/ui/Button";
 const principles = [
   {
     number: "01",
-    title: "Real attention, not templated delivery",
-    description: "Fewer clients, closer partnership.",
+    title: "Innovation-Driven",
+    description:
+      "We embrace emerging technologies to create forward-thinking solutions that drive business transformation.",
   },
   {
     number: "02",
-    title: "A process you can see",
-    description:
-      "Our 8-stage delivery methodology means you always know what's happening and why.",
+    title: "End-to-End Excellence",
+    description: "From strategy and execution to support, we deliver seamless solutions at every stage.",
   },
   {
     number: "03",
-    title: "Enterprise-grade rigor from day one",
-    description: "We hold ourselves to the same standard whether it's your first project with us or your fifth.",
+    title: "Scalable Solutions",
+    description:
+      "Our technology is built to evolve with your business, ensuring long-term value and flexibility.",
   },
   {
     number: "04",
-    title: "Built to scale with you",
-    description: "Solutions designed for where you're headed, not just where you are today.",
+    title: "Client-Centric Approach",
+    description: "Every solution is designed around your unique goals, challenges, and opportunities.",
+  },
+  {
+    number: "05",
+    title: "Quality & Reliability",
+    description:
+      "We are committed to delivering secure, reliable, and high-performing solutions that exceed expectations.",
+  },
+  {
+    number: "06",
+    title: "Partnership",
+    description:
+      "We work as an extension of your team, building relationships founded on trust and shared success.",
   },
 ];
 
@@ -42,11 +55,11 @@ export function WhyMebi() {
         <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
           <div>
             <Reveal>
-              <SectionLabel className="text-purple-soft">Why Organizations Choose MEBI</SectionLabel>
+              <SectionLabel className="text-purple-soft">Why Choose MEBI</SectionLabel>
             </Reveal>
             <Reveal delay={0.05}>
               <h2 className="mt-5 max-w-2xl text-balance text-[34px] font-semibold leading-[1.05] tracking-[-0.02em] text-white sm:text-[44px] lg:text-[48px]">
-                We&apos;re not trying to be everyone&apos;s technology partner.
+                An extension of your team, not just a vendor.
               </h2>
             </Reveal>
           </div>
@@ -57,15 +70,15 @@ export function WhyMebi() {
           </Reveal>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-px overflow-hidden rounded-2xl bg-white/10 sm:grid-cols-2">
+        <div className="mt-14 grid grid-cols-1 gap-px overflow-hidden rounded-2xl bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
           {principles.map((p, i) => (
-            <Reveal key={p.number} delay={0.08 * i}>
-              <div className="h-full bg-white/[0.03] p-8 md:p-10">
+            <Reveal key={p.number} delay={0.06 * i}>
+              <div className="h-full bg-white/[0.03] p-8">
                 <span className="text-sm font-medium text-white/40">{p.number}</span>
-                <h3 className="mt-4 text-xl font-semibold tracking-[-0.01em] text-white md:text-2xl">
+                <h3 className="mt-4 text-lg font-semibold tracking-[-0.01em] text-white">
                   {p.title}
                 </h3>
-                <p className="mt-3 text-white/60 leading-relaxed">{p.description}</p>
+                <p className="mt-3 text-sm text-white/60 leading-relaxed">{p.description}</p>
               </div>
             </Reveal>
           ))}

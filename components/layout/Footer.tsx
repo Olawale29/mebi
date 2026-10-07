@@ -93,7 +93,7 @@ export function Footer() {
 
         <div className="flex flex-col gap-4 pt-8 text-sm text-white/50 md:flex-row md:items-center md:justify-between">
           <p>
-            © {year} {company.name}. All rights reserved.
+            © {year} {company.legalName}. RC: {company.rcNumber}.
           </p>
           <div className="flex gap-6">
             {footerNav.legal.map((item) => (

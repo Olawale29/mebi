@@ -1,18 +1,18 @@
 export const technologyStack = [
   {
-    category: "Languages & Frameworks",
+    category: "Software Development",
     items: ["Python", "Java", "JavaScript", "React", "Flutter", "Node.js", ".NET", "C#"],
   },
   {
-    category: "Cloud & DevOps",
-    items: ["Microsoft Azure", "AWS", "Google Cloud", "Docker", "Kubernetes"],
+    category: "Cloud & Infrastructure",
+    items: ["Microsoft Azure", "AWS", "Google Cloud", "Docker", "Kubernetes", "Microsoft 365", "Linux", "Terraform"],
   },
   {
-    category: "Data & Intelligence",
-    items: ["Power BI", "Tableau", "SQL Server", "PostgreSQL", "MongoDB"],
+    category: "Data & Analytics",
+    items: ["Power BI", "Tableau", "SQL Server", "PostgreSQL", "MySQL", "MongoDB", "AI & ML", "Pandas"],
   },
   {
-    category: "Security",
-    items: ["Microsoft Defender"],
+    category: "Security & Collaboration",
+    items: ["Microsoft Defender", "GitHub", "Git", "Jira", "Google Workspace", "Trello", "Asana", "Slack"],
   },
 ];

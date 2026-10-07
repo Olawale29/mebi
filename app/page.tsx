@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
 import { Hero } from "@/components/sections/Hero";
 import { TrustStrip } from "@/components/sections/TrustStrip";
+import { CoreBusiness } from "@/components/sections/CoreBusiness";
 import { WhatWeDo } from "@/components/sections/WhatWeDo";
 import { WhyMebi } from "@/components/sections/WhyMebi";
 import { ProcessSection } from "@/components/sections/ProcessSection";
@@ -22,6 +23,7 @@ export default function Home() {
     <>
       <Hero />
       <TrustStrip />
+      <CoreBusiness />
       <WhatWeDo />
       <WhyMebi />
       <ProcessSection />

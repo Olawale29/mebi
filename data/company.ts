@@ -1,7 +1,8 @@
 export const company = {
   name: "MEBI Technology",
   shortName: "MEBI",
-  legalName: "MEBI Technology",
+  legalName: "MEBI Technology LTD",
+  rcNumber: "9818508",
   tagline: "Where innovation meets possibilities.",
   positioning: "Technology partners who actually pay attention.",
   url: "https://mebitechnology.com",

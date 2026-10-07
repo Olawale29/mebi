@@ -1,72 +1,53 @@
+// Official roster per the MEBI Technology Company Profile (2026) "Leadership" slide.
+// Two members (Adeyemi Dennis, Aniviye Iyanuoluwa) don't have a photo yet —
+// they render with initials until one is provided.
+
 export type TeamMember = {
   name: string;
   role: string;
   bio?: string;
   photo?: string;
-  leadership?: boolean;
 };
 
 export const team: TeamMember[] = [
   {
     name: "Moronkeji Oluwagbotemi",
-    role: "Founder, MD/CEO",
+    role: "Founder / CEO",
     photo: "/team/gb-ceo.jpg",
-    leadership: true,
   },
   {
     name: "Akanbi Ayorinde",
-    role: "Co-Founder & COO",
+    role: "Co-Founder / COO",
     photo: "/team/ayo-coo.jpg",
-    leadership: true,
   },
   {
     name: "Bolaji Oluwatobi",
-    role: "Chief Financial Officer",
+    role: "CFO",
     photo: "/team/tobi-cfo.jpg",
-    leadership: true,
+  },
+  {
+    name: "Ayoola Abiola",
+    role: "Legal Lead",
+    photo: "/team/abiola-legal-lead.jpg",
   },
   {
     name: "Emele-Ralph Kelechi",
     role: "Marketing Lead",
     photo: "/team/kc-marketing-lead.jpg",
-    leadership: true,
   },
   {
     name: "Oyegunle Olawale",
     role: "Technology Lead",
     photo: "/team/wale-tech-lead.jpg",
-    leadership: true,
   },
   {
-    name: "Abiola",
-    role: "Legal Lead",
-    photo: "/team/abiola-legal-lead.jpg",
+    name: "Adeyemi Dennis",
+    role: "Product Design Lead",
   },
   {
-    name: "Joy",
-    role: "Product Manager",
-    photo: "/team/joy-product-manager.jpg",
-  },
-  {
-    name: "Sunday",
-    role: "Product Designer",
-    photo: "/team/sunday-product-designer.jpg",
-  },
-  {
-    name: "Dayo",
-    role: "Graphics Designer",
-    photo: "/team/dayo-graphics-designer.jpg",
-  },
-  {
-    name: "Ire",
-    role: "Digital Marketing Officer",
-    photo: "/team/ire-digital-marketing-officer.jpg",
-  },
-  {
-    name: "Ife",
-    role: "Social Media Manager",
-    photo: "/team/ife-social-media-manager.jpg",
+    name: "Aniviye Iyanuoluwa",
+    role: "HR & Admin Manager",
   },
 ];
 
-export const leadership = team.filter((member) => member.leadership);
+export const leadership = team;

@@ -32,6 +32,25 @@ const values = [
   { title: "Trust", description: "Integrity is at the heart of everything we do." },
 ];
 
+const futureAreas = [
+  {
+    title: "Software & Cloud Engineering",
+    description: "Full-stack development, modern web architectures, and cloud DevOps.",
+  },
+  {
+    title: "Product Design (UI/UX) & Management",
+    description: "User experience design, product strategy, and agile delivery frameworks.",
+  },
+  {
+    title: "Artificial Intelligence & Data",
+    description: "Applied machine learning, data engineering, and smart business analytics.",
+  },
+  {
+    title: "Cybersecurity & Systems Architecture",
+    description: "Threat detection, infrastructure security, and enterprise systems architecture.",
+  },
+];
+
 export default function AboutPage() {
   return (
     <>
@@ -151,7 +170,7 @@ export default function AboutPage() {
             </Reveal>
           </div>
 
-          <div className="mt-14 grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3 lg:grid-cols-5">
+          <div className="mt-14 grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3 lg:grid-cols-4">
             {leadership.map((member, i) => (
               <Reveal key={member.name} delay={0.06 * i}>
                 <TeamCard member={member} />
@@ -177,6 +196,30 @@ export default function AboutPage() {
                     </li>
                   ))}
                 </ul>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-t border-white/10 bg-surface-dark py-24 text-white md:py-32">
+        <Container>
+          <SectionLabel className="text-purple-soft">MEBI&apos;s Future</SectionLabel>
+          <h2 className="mt-5 max-w-2xl text-balance text-[30px] font-semibold leading-[1.1] tracking-[-0.02em] text-white sm:text-[38px]">
+            Empowerment through education and technical mastery.
+          </h2>
+          <p className="mt-4 max-w-2xl text-white/60 leading-relaxed">
+            Our long-term roadmap includes expanding our ecosystem by building
+            dedicated training facilities to empower the next generation of
+            innovators with hands-on expertise across specialized tech fields.
+          </p>
+          <div className="mt-12 grid grid-cols-1 gap-x-10 gap-y-10 sm:grid-cols-2">
+            {futureAreas.map((area, i) => (
+              <Reveal key={area.title} delay={0.06 * i}>
+                <div className="border-t border-white/10 pt-6">
+                  <h3 className="text-lg font-semibold text-white">{area.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-white/60">{area.description}</p>
+                </div>
               </Reveal>
             ))}
           </div>
