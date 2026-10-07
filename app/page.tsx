@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
 import { Hero } from "@/components/sections/Hero";
+import { PricingHook } from "@/components/sections/PricingHook";
 import { TrustStrip } from "@/components/sections/TrustStrip";
 import { CoreBusiness } from "@/components/sections/CoreBusiness";
 import { WhatWeDo } from "@/components/sections/WhatWeDo";
@@ -22,6 +23,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <PricingHook />
       <TrustStrip />
       <CoreBusiness />
       <WhatWeDo />
