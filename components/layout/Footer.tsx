@@ -11,6 +11,7 @@ export function Footer() {
 
   return (
     <footer
+      data-moon-footer
       className="relative -mt-px overflow-hidden text-white"
       style={{
         background:

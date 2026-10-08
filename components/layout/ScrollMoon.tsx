@@ -1,16 +1,20 @@
 "use client";
 
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 
 export function ScrollMoon() {
+  const pathname = usePathname();
   const layerRef = useRef<HTMLDivElement>(null);
   const moonRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const layer = layerRef.current;
     const moon = moonRef.current;
-    const stage = document.querySelector<HTMLElement>("[data-moon-stage]");
+    const stage =
+      document.querySelector<HTMLElement>("[data-moon-stage]") ??
+      document.querySelector<HTMLElement>("[data-moon-footer]");
     const foreground = document.querySelector<HTMLElement>("[data-moon-foreground]");
 
     if (!layer || !moon || !stage || !foreground) return;
@@ -57,7 +61,7 @@ export function ScrollMoon() {
       window.removeEventListener("scroll", requestUpdate);
       window.removeEventListener("resize", requestUpdate);
     };
-  }, []);
+  }, [pathname]);
 
   return (
     <div
