@@ -13,7 +13,8 @@ const principles = [
   {
     number: "02",
     title: "End-to-End Excellence",
-    description: "From strategy and execution to support, we deliver seamless solutions at every stage.",
+    description:
+      "From strategy and execution to support, we deliver seamless solutions at every stage.",
   },
   {
     number: "03",
@@ -24,7 +25,8 @@ const principles = [
   {
     number: "04",
     title: "Client-Centric Approach",
-    description: "Every solution is designed around your unique goals, challenges, and opportunities.",
+    description:
+      "Every solution is designed around your unique goals, challenges, and opportunities.",
   },
   {
     number: "05",
@@ -55,7 +57,9 @@ export function WhyMebi() {
         <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
           <div>
             <Reveal>
-              <SectionLabel className="text-purple-soft">Why Choose MEBI</SectionLabel>
+              <SectionLabel className="text-purple-soft">
+                Why Choose MEBI
+              </SectionLabel>
             </Reveal>
             <Reveal delay={0.05}>
               <h2 className="mt-5 max-w-2xl text-balance text-[34px] font-semibold leading-[1.05] tracking-[-0.02em] text-white sm:text-[44px] lg:text-[48px]">
@@ -74,11 +78,15 @@ export function WhyMebi() {
           {principles.map((p, i) => (
             <Reveal key={p.number} delay={0.06 * i}>
               <div className="h-full bg-white/[0.03] p-8">
-                <span className="text-sm font-medium text-white/40">{p.number}</span>
+                <span className="text-sm font-medium text-white/40">
+                  {p.number}
+                </span>
                 <h3 className="mt-4 text-lg font-semibold tracking-[-0.01em] text-white">
                   {p.title}
                 </h3>
-                <p className="mt-3 text-sm text-white/60 leading-relaxed">{p.description}</p>
+                <p className="mt-3 text-sm text-white/60 leading-relaxed">
+                  {p.description}
+                </p>
               </div>
             </Reveal>
           ))}

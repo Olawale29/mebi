@@ -7,13 +7,18 @@ const today = {
   title: "Tailored Digital Services",
   description:
     "Custom software engineering and digital transformation for growing businesses and enterprises.",
-  items: ["Custom Web & Mobile Apps", "Business Process Automation", "Systems Integration & Consulting"],
+  items: [
+    "Custom Web & Mobile Apps",
+    "Business Process Automation",
+    "Systems Integration & Consulting",
+  ],
 };
 
 const tomorrow = {
   label: "In the pipeline",
   title: "MEBI SaaS & AI Products",
-  description: "Scalable, MEBI-owned products aimed at solving day-to-day business friction.",
+  description:
+    "Scalable, MEBI-owned products aimed at solving day-to-day business friction.",
   items: [
     "Sales, Invoicing & Payment Processing",
     "Inventory, HR & CRM Systems",
@@ -27,7 +32,13 @@ export function CoreBusiness() {
       <Container>
         <SectionHeading
           label="What We Do"
-          title="Custom software today. Our own products tomorrow."
+          title={
+            <>
+              Software built for your business.
+              <br />
+              Don&apos;t worry, Our own products coming soon...
+            </>
+          }
           description="We bridge the gap between complex technology and everyday business execution, with tools that are easy to adopt and useful on day one."
         />
 
@@ -40,10 +51,16 @@ export function CoreBusiness() {
               <h3 className="mt-3 text-2xl font-semibold tracking-[-0.01em] text-ink">
                 {today.title}
               </h3>
-              <p className="mt-3 text-muted leading-relaxed">{today.description}</p>
+
+              <p className="mt-3 text-muted leading-relaxed">
+                {today.description}
+              </p>
               <ul className="mt-6 space-y-3">
                 {today.items.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-ink/80">
+                  <li
+                    key={item}
+                    className="flex items-start gap-3 text-sm text-ink/80"
+                  >
                     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                     {item}
                   </li>
@@ -64,10 +81,15 @@ export function CoreBusiness() {
               <h3 className="relative mt-3 text-2xl font-semibold tracking-[-0.01em] text-white">
                 {tomorrow.title}
               </h3>
-              <p className="relative mt-3 text-white/70 leading-relaxed">{tomorrow.description}</p>
+              <p className="relative mt-3 text-white/70 leading-relaxed">
+                {tomorrow.description}
+              </p>
               <ul className="relative mt-6 space-y-3">
                 {tomorrow.items.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-white/80">
+                  <li
+                    key={item}
+                    className="flex items-start gap-3 text-sm text-white/80"
+                  >
                     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                     {item}
                   </li>
