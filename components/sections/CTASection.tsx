@@ -5,7 +5,10 @@ import { company } from "@/data/company";
 
 export function CTASection() {
   return (
-    <section className="relative overflow-hidden bg-primary py-28 text-white md:py-36">
+    <section
+      data-moon-stage
+      className="relative overflow-hidden bg-primary py-28 text-white md:py-36"
+    >
       <div
         aria-hidden
         className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-accent/20 blur-3xl"
@@ -14,7 +17,11 @@ export function CTASection() {
         aria-hidden
         className="pointer-events-none absolute -bottom-32 -left-24 h-96 w-96 rounded-full bg-primary-light/20 blur-3xl"
       />
-      <Container className="relative text-center">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-primary"
+      />
+      <Container className="relative z-10 text-center">
         <Reveal>
           <h2 className="mx-auto max-w-3xl text-balance text-[38px] font-semibold leading-[1.05] tracking-[-0.02em] sm:text-[52px] lg:text-[64px]">
             Let&apos;s build something that actually fits.
