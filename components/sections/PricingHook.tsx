@@ -25,7 +25,7 @@ export function PricingHook() {
         <Reveal>
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <p className="text-sm font-semibold tracking-[-0.01em] text-ink md:text-base">
-              Real prices. No sales call required.
+              Real prices. No need to call first.
             </p>
 
             <div className="grid grid-cols-3 gap-6 md:gap-10">

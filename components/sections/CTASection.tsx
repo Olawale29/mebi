@@ -22,8 +22,8 @@ export function CTASection() {
         </Reveal>
         <Reveal delay={0.08}>
           <p className="mx-auto mt-6 max-w-xl text-balance text-lg text-white/75 md:text-xl">
-            Tell us what you&apos;re working on — we&apos;ll tell you honestly
-            whether we&apos;re the right fit before you spend a dollar.
+            Tell us what you have in mind. We’ll let you know if we can help
+            before you pay anything.
           </p>
         </Reveal>
         <Reveal delay={0.15}>
@@ -39,7 +39,10 @@ export function CTASection() {
               {company.email}
             </a>
             {" · "}
-            <a href={`tel:${company.phones[0].replace(/\s/g, "")}`} className="hover:text-white">
+            <a
+              href={`tel:${company.phones[0].replace(/\s/g, "")}`}
+              className="hover:text-white"
+            >
               {company.phones[0]}
             </a>
           </p>
