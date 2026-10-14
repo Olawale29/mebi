@@ -32,13 +32,7 @@ export function CoreBusiness() {
       <Container>
         <SectionHeading
           label="What We Do"
-          title={
-            <>
-              Software built for your business.
-              <br />
-              Don&apos;t worry, Our own products coming soon...
-            </>
-          }
+          title="Custom software today. Our own products tomorrow."
           description="We bridge the gap between complex technology and everyday business execution, with tools that are easy to adopt and useful on day one."
         />
 

@@ -71,7 +71,7 @@ export function ScrollMoon() {
     >
       <div
         ref={moonRef}
-        className="absolute left-1/2 top-[42vh] size-36 will-change-transform sm:size-48 lg:size-64"
+        className="absolute left-1/2 top-[88vh] size-36 will-change-transform sm:top-[58vh] sm:size-48 lg:top-[42vh] lg:size-64"
       >
         <Image
           src="/scroll-moon.png"
