@@ -16,7 +16,7 @@ export function WhatWeDo() {
         <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
           <SectionHeading
             label="Services"
-            title="Built around how your business actually works."
+            title="Built to fit the way you run your business."
           />
           <Reveal delay={0.1} className="shrink-0">
             <Button href="/services" variant="ghost" size="sm">
@@ -33,7 +33,9 @@ export function WhatWeDo() {
                 href={`/services/${service.slug}`}
                 className="group flex h-full flex-col rounded-2xl border border-primary/20 bg-surface-tint p-7 transition-colors hover:border-primary/40"
               >
-                <span className="text-sm font-semibold text-primary">{service.number}</span>
+                <span className="text-sm font-semibold text-primary">
+                  {service.number}
+                </span>
                 <h3 className="mt-3 text-lg font-semibold tracking-[-0.01em] text-ink transition-colors group-hover:text-primary">
                   {service.title}
                 </h3>
@@ -47,7 +49,9 @@ export function WhatWeDo() {
                   <span className="text-xl font-semibold text-primary">
                     {service.startingPrice}
                     {service.startingPeriod && (
-                      <span className="text-sm font-normal text-muted">{service.startingPeriod}</span>
+                      <span className="text-sm font-normal text-muted">
+                        {service.startingPeriod}
+                      </span>
                     )}
                   </span>
                 </div>
