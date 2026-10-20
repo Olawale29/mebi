@@ -36,11 +36,7 @@ export function NewsletterForm() {
       <p className="mt-3 text-sm leading-relaxed text-white/60">
         Practical ideas on technology, business, and building what&apos;s next.
       </p>
-      <form
-        onSubmit={handleSubmit}
-        className="mt-4"
-        aria-label="Newsletter signup"
-      >
+      <form onSubmit={handleSubmit} className="mt-4" aria-label="Newsletter signup">
         <label className="sr-only" htmlFor="newsletter-email">
           Email address
         </label>
@@ -72,11 +68,7 @@ export function NewsletterForm() {
           No spam. Unsubscribe anytime.
         </p>
         {status === "success" && (
-          <p
-            className="mt-3 text-sm text-purple-soft"
-            role="status"
-            aria-live="polite"
-          >
+          <p className="mt-3 text-sm text-purple-soft" role="status" aria-live="polite">
             You&apos;re on the list. Welcome aboard.
           </p>
         )}

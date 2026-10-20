@@ -7,9 +7,10 @@ import { Reveal } from "@/components/ui/Reveal";
 // the rate card — if pricing changes there, it updates here automatically.
 const featuredSlugs: { slug: string; label: string }[] = [
   { slug: "web-development", label: "Websites" },
-  { slug: "software-development", label: "Softwares" },
+  { slug: "software-development", label: "Software & Apps" },
   { slug: "ui-ux-design", label: "UI/UX Design" },
 ];
+
 const featured = featuredSlugs
   .map(({ slug, label }) => {
     const service = services.find((s) => s.slug === slug);
@@ -27,16 +28,16 @@ export function PricingHook() {
               Real prices. No need to call first.
             </p>
 
-            <div className="grid grid-cols-3 gap-6 md:gap-10 ">
+            <div className="grid grid-cols-3 gap-6 md:gap-10">
               {featured.map((item) => (
                 <div key={item.slug} className="flex flex-col">
-                  <span className="text-[11px] font-medium  uppercase tracking-[0.1em] text-muted/80 nowrap">
+                  <span className="text-[11px] font-medium uppercase tracking-[0.1em] text-muted/80">
                     {item.label}
                   </span>
-                  <span className="mt-1 text-nowrap">
+                  <span className="mt-1">
                     <span className="text-xs text-muted">from </span>
-                    <span className="text-[1.0rem] font-semibold tracking-[-0.01em] text-primary md:text-[1.0rem]">
-                      {item.shortPrice || item.startingPrice}
+                    <span className="text-lg font-semibold tracking-[-0.01em] text-primary md:text-xl">
+                      {item.startingPrice}
                     </span>
                   </span>
                 </div>

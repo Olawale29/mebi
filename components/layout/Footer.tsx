@@ -38,8 +38,8 @@ export function Footer() {
       />
 
       <Container className="relative z-30 pt-64 pb-10 md:pt-80 lg:pt-96">
-        <div className="flex flex-col justify-between gap-12 border-b border-white/10 pb-3.5 lg:flex-row lg:items-end">
-          <div className="max-w-md mt-35">
+        <div className="flex flex-col justify-between gap-12 border-b border-white/10 pb-16 lg:flex-row lg:items-end">
+          <div className="max-w-md">
             <Link href="/" aria-label="MEBI Technology — Home">
               <Logo type="full" variant="white" className="h-11" />
             </Link>
@@ -51,11 +51,7 @@ export function Footer() {
                 {company.email}
               </a>
               {company.phones.map((phone) => (
-                <a
-                  key={phone}
-                  href={`tel:${phone.replace(/\s/g, "")}`}
-                  className="hover:text-white"
-                >
+                <a key={phone} href={`tel:${phone.replace(/\s/g, "")}`} className="hover:text-white">
                   {phone}
                 </a>
               ))}
@@ -75,10 +71,7 @@ export function Footer() {
             <ul className="mt-5 space-y-3">
               {footerNav.services.map((item) => (
                 <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-white/70 hover:text-white"
-                  >
+                  <Link href={item.href} className="text-white/70 hover:text-white">
                     {item.label}
                   </Link>
                 </li>
@@ -92,10 +85,7 @@ export function Footer() {
             <ul className="mt-5 space-y-3">
               {footerNav.company.map((item) => (
                 <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-white/70 hover:text-white"
-                  >
+                  <Link href={item.href} className="text-white/70 hover:text-white">
                     {item.label}
                   </Link>
                 </li>
@@ -125,9 +115,7 @@ export function Footer() {
             <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-white/40">
               Office
             </h3>
-            <p className="mt-5 text-sm leading-relaxed text-white/60">
-              {company.address}
-            </p>
+            <p className="mt-5 text-sm leading-relaxed text-white/60">{company.address}</p>
           </div>
         </div>
 
@@ -137,11 +125,7 @@ export function Footer() {
           </p>
           <div className="flex gap-6">
             {footerNav.legal.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="hover:text-white"
-              >
+              <Link key={item.href} href={item.href} className="hover:text-white">
                 {item.label}
               </Link>
             ))}
