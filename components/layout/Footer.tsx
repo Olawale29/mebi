@@ -1,18 +1,45 @@
 import Link from "next/link";
+import Image from "next/image";
 import { footerNav } from "@/data/nav";
 import { company, socialLinks } from "@/data/company";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/ui/Logo";
+import { NewsletterForm } from "@/components/NewsletterForm";
 
 export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-surface-dark text-white">
-      <Container className="pt-20 pb-10 md:pt-28">
-        <div className="flex flex-col justify-between gap-12 border-b border-white/10 pb-16 lg:flex-row lg:items-end">
-          <div className="max-w-md">
+    <footer
+      data-moon-footer
+      className="relative -mt-px overflow-hidden text-white"
+      style={{
+        background:
+          "linear-gradient(to bottom, var(--color-primary) 0%, var(--color-primary) 12%, var(--color-surface-dark) 42%, var(--color-surface-dark) 100%)",
+      }}
+    >
+      <Image
+        data-moon-foreground
+        src="/footer-landscape-foreground.png"
+        alt=""
+        width={2048}
+        height={768}
+        sizes="100vw"
+        className="pointer-events-none absolute left-1/2 top-0 z-20 h-auto w-[max(100%,64rem)] max-w-none -translate-x-1/2 select-none"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-[max(37.5vw,24rem)] z-[25] h-28 -translate-y-full bg-gradient-to-b from-transparent to-surface-dark"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-surface-dark/65"
+      />
+
+      <Container className="relative z-30 pt-64 pb-10 md:pt-80 lg:pt-96">
+        <div className="flex flex-col justify-between gap-12 border-b border-white/10 pb-3.5 lg:flex-row lg:items-end">
+          <div className="max-w-md mt-35">
             <Link href="/" aria-label="MEBI Technology — Home">
               <Logo type="full" variant="white" className="h-11" />
             </Link>
@@ -24,11 +51,16 @@ export function Footer() {
                 {company.email}
               </a>
               {company.phones.map((phone) => (
-                <a key={phone} href={`tel:${phone.replace(/\s/g, "")}`} className="hover:text-white">
+                <a
+                  key={phone}
+                  href={`tel:${phone.replace(/\s/g, "")}`}
+                  className="hover:text-white"
+                >
                   {phone}
                 </a>
               ))}
             </div>
+            <NewsletterForm />
           </div>
           <Button href="/contact" variant="secondary" size="md">
             Book a Free Consultation
@@ -43,7 +75,10 @@ export function Footer() {
             <ul className="mt-5 space-y-3">
               {footerNav.services.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="text-white/70 hover:text-white">
+                  <Link
+                    href={item.href}
+                    className="text-white/70 hover:text-white"
+                  >
                     {item.label}
                   </Link>
                 </li>
@@ -57,7 +92,10 @@ export function Footer() {
             <ul className="mt-5 space-y-3">
               {footerNav.company.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="text-white/70 hover:text-white">
+                  <Link
+                    href={item.href}
+                    className="text-white/70 hover:text-white"
+                  >
                     {item.label}
                   </Link>
                 </li>
@@ -87,7 +125,9 @@ export function Footer() {
             <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-white/40">
               Office
             </h3>
-            <p className="mt-5 text-sm leading-relaxed text-white/60">{company.address}</p>
+            <p className="mt-5 text-sm leading-relaxed text-white/60">
+              {company.address}
+            </p>
           </div>
         </div>
 
@@ -97,7 +137,11 @@ export function Footer() {
           </p>
           <div className="flex gap-6">
             {footerNav.legal.map((item) => (
-              <Link key={item.href} href={item.href} className="hover:text-white">
+              <Link
+                key={item.href}
+                href={item.href}
+                className="hover:text-white"
+              >
                 {item.label}
               </Link>
             ))}
