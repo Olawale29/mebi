@@ -33,7 +33,7 @@ export const services: Service[] = [
     heroHeadline: "Websites built to perform.",
     heroSub:
       "From starter sites to e-commerce and corporate platforms — responsive, fast, and built on modern stacks.",
-    startingPrice: "₦450,000",
+    startingPrice: "₦400k",
     tiers: [
       {
         name: "Starter Website",
@@ -66,7 +66,7 @@ export const services: Service[] = [
     heroHeadline: "Software built around the problem you actually have.",
     heroSub:
       "Custom web applications, mobile apps and enterprise solutions — engineered from the ground up, not adapted from a template.",
-    startingPrice: "₦2,000,000",
+    startingPrice: "₦2M",
     tiers: [
       {
         name: "Custom Web Application",
@@ -95,7 +95,7 @@ export const services: Service[] = [
     heroHeadline: "Design that makes complexity simple.",
     heroSub:
       "Research, information architecture, user flows and interfaces — validated before a line of code is written.",
-    startingPrice: "₦100,000",
+    startingPrice: "₦100k",
     tiers: [
       { name: "Landing Page Design", price: "₦100,000", features: ["Single-page design", "Responsive layout"] },
       { name: "Design System", price: "₦350,000", features: ["Component library", "Design tokens", "Documentation"] },

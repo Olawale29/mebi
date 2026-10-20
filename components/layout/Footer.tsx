@@ -5,6 +5,7 @@ import { company, socialLinks } from "@/data/company";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/ui/Logo";
+import { NewsletterForm } from "@/components/NewsletterForm";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -55,6 +56,7 @@ export function Footer() {
                 </a>
               ))}
             </div>
+            <NewsletterForm />
           </div>
           <Button href="/contact" variant="secondary" size="md">
             Book a Free Consultation

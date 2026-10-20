@@ -9,7 +9,7 @@ export function TeamCard({ member }: { member: TeamMember }) {
     .join("");
 
   return (
-    <div>
+    <div className="group">
       <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl bg-purple-soft/30">
         {member.photo ? (
           <Image
@@ -17,7 +17,7 @@ export function TeamCard({ member }: { member: TeamMember }) {
             alt={member.name}
             fill
             sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
-            className="object-cover"
+            className="object-cover grayscale transition-[filter,transform] duration-500 ease-out group-hover:scale-[1.03] group-hover:grayscale-0 motion-reduce:transition-none"
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center">

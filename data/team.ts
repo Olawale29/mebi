@@ -18,7 +18,7 @@ export const team: TeamMember[] = [
   {
     name: "Akanbi Ayorinde",
     role: "Co-Founder / COO",
-    photo: "/team/ayo-coo.jpg",
+    photo: "/team/ayo-coo-color.png",
   },
   {
     name: "Bolaji Oluwatobi",
@@ -28,12 +28,12 @@ export const team: TeamMember[] = [
   {
     name: "Ayoola Abiola",
     role: "Legal Lead",
-    photo: "/team/abiola-legal-lead.jpg",
+    photo: "/team/abiola-legal-lead-color.png",
   },
   {
     name: "Emele-Ralph Kelechi",
     role: "Marketing Lead",
-    photo: "/team/kc-marketing-lead.jpg",
+    photo: "/team/kc-marketing-lead-color.jpg",
   },
   {
     name: "Oyegunle Olawale",

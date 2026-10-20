@@ -16,6 +16,13 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Newsletter setup
+
+The footer newsletter form adds contacts to Brevo. Copy `.env.example` to
+`.env.local`, then set `BREVO_API_KEY` and `BREVO_NEWSLETTER_LIST_ID`. You can
+find a list ID in Brevo under **Contacts → Lists**. Keep the API key server-side
+and do not prefix it with `NEXT_PUBLIC_`.
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.

@@ -57,7 +57,7 @@ export default function AboutPage() {
       <PageHeader
         label="About MEBI"
         title="We started MEBI because “generic” wasn't good enough."
-        description="We saw organizations across sectors underserved by technology partners who treat every engagement as generic. We're building something different."
+        description="We are building something different"
       />
 
       <section className="py-24 md:py-32">
@@ -120,11 +120,10 @@ export default function AboutPage() {
             <Reveal delay={0.1}>
               <SectionLabel className="text-purple-soft">Mission</SectionLabel>
               <p className="mt-5 text-balance text-2xl font-medium leading-relaxed text-white md:text-3xl">
-                To empower minds, enrich lives, and transform the world
-                through the limitless potential of technology. We believe
-                every individual, business, and community deserves access to
-                solutions that unlock new opportunities and drive real
-                progress.
+                To bridge the gap between complex technology and everyday
+                business execution—delivering tailored software, scalable
+                digital platforms, and technical education that drive
+                real-world progress.
               </p>
             </Reveal>
           </div>
