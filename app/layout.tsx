@@ -21,7 +21,10 @@ export const metadata: Metadata = {
     path: "/",
   }),
   metadataBase: new URL(company.url),
-  icons: { icon: "/favicon.ico" },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 const organizationSchema = {
