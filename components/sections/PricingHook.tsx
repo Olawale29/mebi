@@ -34,10 +34,10 @@ export function PricingHook() {
                   <span className="text-[11px] font-medium uppercase tracking-[0.1em] text-muted/80">
                     {item.label}
                   </span>
-                  <span className="mt-1">
+                  <span className="mt-1 text-nowrap">
                     <span className="text-xs text-muted">from </span>
                     <span className="text-lg font-semibold tracking-[-0.01em] text-primary md:text-xl">
-                      {item.startingPrice}
+                      {item.shortPrice || item.startingPrice}
                     </span>
                   </span>
                 </div>
