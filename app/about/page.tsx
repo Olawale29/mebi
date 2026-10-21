@@ -58,9 +58,10 @@ export default function AboutPage() {
         label="About MEBI"
         title="We started MEBI because “generic” wasn't good enough."
         description="We are building something different"
+        className="pb-12! md:pb-14!"
       />
 
-      <section className="py-24 md:py-32">
+      <section className="pt-12 pb-24 md:pt-14 md:pb-32">
         <Container>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
             <Reveal>
