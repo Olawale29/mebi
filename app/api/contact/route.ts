@@ -1,15 +1,13 @@
 import { NextResponse } from "next/server";
+import { company } from "@/data/company";
 
 type ContactPayload = {
   name: string;
   email: string;
   company?: string;
   phone?: string;
-  projectType?: string;
-  budget?: string;
-  timeline?: string;
+  helpType?: string;
   description: string;
-  source?: string;
 };
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -25,6 +23,14 @@ function isValidPayload(data: unknown): data is ContactPayload {
     typeof d.description === "string" &&
     d.description.trim().length > 0
   );
+}
+
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
 }
 
 export async function POST(request: Request) {
@@ -43,29 +49,66 @@ export async function POST(request: Request) {
     );
   }
 
-  // Forwarding destination (e.g. an email service, CRM or webhook) is
-  // configured via environment variables and never exposed client-side.
-  const webhookUrl = process.env.CONTACT_FORM_WEBHOOK_URL;
+  const apiKey = process.env.BREVO_API_KEY;
+
+  if (!apiKey) {
+    console.error("[contact] Brevo is not configured.");
+    return NextResponse.json(
+      { error: "Something went wrong. Please try again shortly." },
+      { status: 503 }
+    );
+  }
+
+  const rows: [string, string | undefined][] = [
+    ["Name", body.name],
+    ["Email", body.email],
+    ["Company / Organization", body.company],
+    ["Phone Number", body.phone],
+    ["What do you need help with?", body.helpType],
+  ];
+
+  const detailsHtml = rows
+    .filter(([, value]) => value && value.trim().length > 0)
+    .map(([label, value]) => `<p><strong>${label}:</strong> ${escapeHtml(value as string)}</p>`)
+    .join("");
 
   try {
-    if (webhookUrl) {
-      await fetch(webhookUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...body, receivedAt: new Date().toISOString() }),
-      });
-    } else {
-      // No forwarding destination configured yet — log so the enquiry
-      // isn't silently lost during local development.
-      console.info("[contact] new enquiry (no webhook configured):", body);
-    }
+    const response = await fetch("https://api.brevo.com/v3/smtp/email", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        "api-key": apiKey,
+      },
+      body: JSON.stringify({
+        sender: { name: "MEBI Technology Website", email: company.email },
+        to: [{ email: company.email }],
+        replyTo: { email: body.email, name: body.name },
+        subject: `New project enquiry from ${body.name}`,
+        htmlContent: `
+          <h2>New project enquiry</h2>
+          ${detailsHtml}
+          <p><strong>Project description:</strong></p>
+          <p>${escapeHtml(body.description).replace(/\n/g, "<br />")}</p>
+        `,
+      }),
+      cache: "no-store",
+    });
 
-    return NextResponse.json({ ok: true }, { status: 200 });
+    if (!response.ok) {
+      console.error("[contact] Brevo rejected the email:", response.status, await response.text());
+      return NextResponse.json(
+        { error: "Something went wrong. Please try again shortly." },
+        { status: 502 }
+      );
+    }
   } catch (error) {
-    console.error("[contact] failed to forward enquiry:", error);
+    console.error("[contact] Failed to send enquiry email:", error);
     return NextResponse.json(
       { error: "Something went wrong. Please try again shortly." },
       { status: 502 }
     );
   }
+
+  return NextResponse.json({ ok: true }, { status: 200 });
 }
