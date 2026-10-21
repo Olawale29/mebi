@@ -19,9 +19,11 @@ export function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
         </span>
         <div>
           <p className="text-sm font-semibold text-ink">{testimonial.name}</p>
-          <p className="text-sm text-muted">
-            {testimonial.role}, {testimonial.company}
-          </p>
+          {testimonial.role && testimonial.company && (
+            <p className="text-sm text-muted">
+              {testimonial.role}, {testimonial.company}
+            </p>
+          )}
         </div>
       </figcaption>
     </figure>
