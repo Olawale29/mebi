@@ -455,8 +455,16 @@ export function HeroGlobe({ anchorRef, sectionRef }: Props) {
         requestPermission?: () => Promise<"granted" | "denied">;
       }
     ).requestPermission;
-    const enableSensor = () => {
+    // Only ask once the person actually taps inside the hero — not on the
+    // first touch anywhere on the site, which would prompt before they've
+    // even seen the globe.
+    const enableSensor = (e: TouchEvent) => {
       if (!sensorPermission) return;
+      const touch = e.changedTouches[0];
+      const section = sectionRef.current;
+      if (!touch || !section) return;
+      const rect = section.getBoundingClientRect();
+      if (touch.clientY < rect.top || touch.clientY > rect.bottom) return;
       window.removeEventListener("touchend", enableSensor);
       sensorPermission()
         .then((state) => {
@@ -468,7 +476,7 @@ export function HeroGlobe({ anchorRef, sectionRef }: Props) {
     };
     if (window.innerWidth < 1024 && "DeviceOrientationEvent" in window) {
       if (sensorPermission) {
-        window.addEventListener("touchend", enableSensor, { once: true });
+        window.addEventListener("touchend", enableSensor);
       } else {
         window.addEventListener("deviceorientation", onOrientation);
       }
