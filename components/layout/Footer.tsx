@@ -15,8 +15,13 @@ export function Footer() {
       data-moon-footer
       className="relative -mt-px overflow-hidden text-white"
       style={{
+        // Anchored to the same max(37.5vw, 24rem) point the landscape-image
+        // blend overlay uses below, so the two agree regardless of how tall
+        // the footer's content ends up — a percentage of this element's own
+        // (very variable) height drifted out of sync with that overlay on
+        // short/mobile layouts and left a visible seam.
         background:
-          "linear-gradient(to bottom, var(--color-primary) 0%, var(--color-primary) 12%, var(--color-surface-dark) 42%, var(--color-surface-dark) 100%)",
+          "linear-gradient(to bottom, var(--color-primary) 0, var(--color-primary) calc(max(37.5vw, 24rem) - 6rem), var(--color-surface-dark) max(37.5vw, 24rem), var(--color-surface-dark) 100%)",
       }}
     >
       <Image
