@@ -35,12 +35,12 @@ export const services: Service[] = [
     heroHeadline: "Websites built to perform.",
     heroSub:
       "From starter sites to e-commerce and corporate platforms — responsive, fast, and built on modern stacks.",
-    startingPrice: "₦450,000",
-    shortPrice: "₦450k",
+    startingPrice: "₦400,000",
+    shortPrice: "₦400k",
     tiers: [
       {
         name: "Starter Website",
-        price: "₦450,000",
+        price: "₦400,000",
         features: [
           "1–5 pages",
           "Responsive design",

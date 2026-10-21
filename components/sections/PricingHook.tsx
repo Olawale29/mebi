@@ -7,8 +7,8 @@ import { Reveal } from "@/components/ui/Reveal";
 // the rate card — if pricing changes there, it updates here automatically.
 const featuredSlugs: { slug: string; label: string }[] = [
   { slug: "web-development", label: "Websites" },
-  { slug: "software-development", label: "Software & Apps" },
-  { slug: "ui-ux-design", label: "UI/UX Design" },
+  { slug: "software-development", label: "Software" },
+  { slug: "ui-ux-design", label: "UI/UX" },
 ];
 
 const featured = featuredSlugs
@@ -31,7 +31,7 @@ export function PricingHook() {
             <div className="grid grid-cols-3 gap-6 md:gap-10">
               {featured.map((item) => (
                 <div key={item.slug} className="flex flex-col">
-                  <span className="text-[11px] font-medium uppercase tracking-[0.1em] text-muted/80">
+                  <span className="whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.1em] text-muted/80">
                     {item.label}
                   </span>
                   <span className="mt-1 text-nowrap">
