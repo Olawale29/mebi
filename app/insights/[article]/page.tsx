@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { buildMetadata } from "@/lib/seo";
 import { articles, getArticleBySlug } from "@/data/articles";
+import { ArticleArt, hasArticleArt } from "@/components/blog/ArticleArt";
 import { Container } from "@/components/ui/Container";
 import { SectionLabel } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
@@ -82,10 +84,23 @@ export default async function ArticlePage({
             </Reveal>
 
             <Reveal delay={0.15}>
-              <div className="mt-10 flex aspect-[16/9] items-center justify-center rounded-2xl bg-gradient-to-br from-primary-light/30 via-purple-soft/40 to-accent/15">
-                <span className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-dark/50">
-                  {article.category}
-                </span>
+              <div className="relative mt-10 flex aspect-[16/9] items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-primary-light/30 via-purple-soft/40 to-accent/15">
+                {article.image ? (
+                  <Image
+                    src={article.image}
+                    alt=""
+                    fill
+                    priority
+                    sizes="(min-width: 768px) 672px, 100vw"
+                    className="object-cover"
+                  />
+                ) : hasArticleArt(article.slug) ? (
+                  <ArticleArt slug={article.slug} />
+                ) : (
+                  <span className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-dark/50">
+                    {article.category}
+                  </span>
+                )}
               </div>
             </Reveal>
 
