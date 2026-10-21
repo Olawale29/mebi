@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { buildMetadata } from "@/lib/seo";
 import { articles, featuredArticle } from "@/data/articles";
@@ -24,7 +25,7 @@ export default function InsightsPage() {
       <PageHeader
         label="Insights"
         title="Notes on design and engineering."
-        description="Perspective on how we think about product, design and technology — written for the people making these decisions."
+        description="Straight talk on product, design and technology, written for the people who have to make the decisions."
       />
 
       <section className="pb-16 md:pb-20">
@@ -34,10 +35,21 @@ export default function InsightsPage() {
               href={`/insights/${featuredArticle.slug}`}
               className="group grid grid-cols-1 gap-8 overflow-hidden rounded-2xl border border-ink/10 lg:grid-cols-2"
             >
-              <div className="flex aspect-[4/3] items-center justify-center bg-gradient-to-br from-primary via-primary-dark to-surface-dark-2 lg:aspect-auto">
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
-                  Featured
-                </span>
+              <div className="relative flex aspect-[4/3] items-center justify-center bg-gradient-to-br from-primary via-primary-dark to-surface-dark-2 lg:aspect-auto">
+                {featuredArticle.image ? (
+                  <Image
+                    src={featuredArticle.image}
+                    alt=""
+                    fill
+                    priority
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03] motion-reduce:transition-none"
+                  />
+                ) : (
+                  <span className="text-xs font-semibold uppercase tracking-[0.2em] text-white/50">
+                    Featured
+                  </span>
+                )}
               </div>
               <div className="flex flex-col justify-center p-8 md:p-12">
                 <SectionLabel>{featuredArticle.category}</SectionLabel>
