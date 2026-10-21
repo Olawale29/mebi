@@ -10,17 +10,31 @@ export function TeamCard({ member }: { member: TeamMember }) {
 
   return (
     <div className="group">
-      <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl bg-purple-soft/30">
+      <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-white ring-1 ring-ink/5">
         {member.photo ? (
-          <Image
-            src={member.photo}
-            alt={member.name}
-            fill
-            sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
-            className="object-cover grayscale transition-[filter,transform] duration-500 ease-out group-hover:scale-[1.03] group-hover:grayscale-0 motion-reduce:transition-none"
-          />
+          // The frame is laid out at 4:5 and the square card crops it, so
+          // every photo is cut at the same line below the shoulders. Scale
+          // and shift line the heads up at one size and height.
+          <div
+            className="absolute inset-x-0 top-0 h-[125%] origin-top"
+            style={
+              member.frame
+                ? {
+                    transform: `translateY(${member.frame.y}%) scale(${member.frame.scale})`,
+                  }
+                : undefined
+            }
+          >
+            <Image
+              src={member.photo}
+              alt={member.name}
+              fill
+              sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
+              className="object-cover grayscale transition-[filter,transform] duration-500 ease-out group-hover:scale-[1.03] group-hover:grayscale-0 motion-reduce:transition-none"
+            />
+          </div>
         ) : (
-          <div className="flex h-full w-full items-center justify-center">
+          <div className="flex h-full w-full items-center justify-center bg-purple-soft/30">
             <span className="text-2xl font-semibold text-primary-dark/50">
               {initials}
             </span>
