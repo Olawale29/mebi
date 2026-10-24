@@ -1,3 +1,5 @@
+import Image, { type StaticImageData } from "next/image";
+import { getProjectBySlug } from "@/data/projects";
 import { cn } from "@/lib/utils";
 
 const base =
@@ -179,17 +181,38 @@ const covers: Record<string, React.ComponentType> = {
 
 export function ProjectCover({
   slug,
+  image,
   className,
   size = "md",
 }: {
   slug: string;
+  image?: StaticImageData | string;
   className?: string;
   size?: "md" | "lg";
 }) {
+  const project = getProjectBySlug(slug);
+  const coverImage = image || project?.image;
+
+  if (coverImage) {
+    return (
+      <div className={cn("relative h-full w-full overflow-hidden bg-muted/10", className)}>
+        <Image
+          src={coverImage}
+          alt={project?.name || slug}
+          fill
+          priority={size === "lg"}
+          quality={90}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1400px"
+          className="object-cover object-center"
+        />
+      </div>
+    );
+  }
+
   const Cover = covers[slug];
 
   return (
-    <div className={cn("h-full w-full overflow-hidden", className)}>
+    <div className={cn("relative h-full w-full overflow-hidden", className)}>
       <div className={cn("h-full w-full", size === "lg" && "scale-[1.7]")}>
         {Cover ? (
           <Cover />
