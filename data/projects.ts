@@ -1,7 +1,12 @@
 // Placeholder project/case-study data. `isPlaceholder: true` marks entries
 // that are illustrative only — swap in real project data as it becomes
 // available and flip the flag to false so result metrics etc. can render.
-
+import type { StaticImageData } from "next/image";
+import Fintech from "@/public/placeholder_projects/fintech-app.png";
+import Business from "@/public/placeholder_projects/business_management.png";
+import Ecommerce from "@/public/placeholder_projects/ecommerce(1).png";
+import HealthApp from "@/public/placeholder_projects/heath app.png";
+import Logistics from "@/public/placeholder_projects/logistics platfrom.png";
 export type Project = {
   slug: string;
   index: string;
@@ -11,6 +16,7 @@ export type Project = {
   description: string;
   services: string[];
   technology: string[];
+  image?: StaticImageData;
   timeline: string;
   challenge: string;
   approach: string[];
@@ -37,6 +43,7 @@ export const projects: Project[] = [
       "Designed a modular dashboard system that scales from a single account to a full portfolio view",
       "Built a component library so new financial products can ship without new design work",
     ],
+    image: Fintech,
     isPlaceholder: true,
     results: null,
   },
@@ -48,7 +55,10 @@ export const projects: Project[] = [
     industry: "Logistics & Supply Chain",
     description:
       "An internal operations platform concept for coordinating fleet, inventory and delivery workflows in one place.",
-    services: ["Software & Solution Development", "Digital Transformation & Automation"],
+    services: [
+      "Software & Solution Development",
+      "Digital Transformation & Automation",
+    ],
     technology: ["React", "Node.js", "MySQL"],
     timeline: "Illustrative — 14 weeks",
     challenge:
@@ -58,6 +68,7 @@ export const projects: Project[] = [
       "Consolidated fleet, inventory and delivery status into one real-time system",
       "Designed role-based views so dispatchers, drivers and managers each see only what they need",
     ],
+    image: Logistics,
     isPlaceholder: true,
     results: null,
   },
@@ -79,6 +90,7 @@ export const projects: Project[] = [
       "Designed an accessible interface that meets contrast and legibility standards for all ages",
       "Integrated secure authentication for handling sensitive health records",
     ],
+    image: HealthApp,
     isPlaceholder: true,
     results: null,
   },
@@ -100,6 +112,7 @@ export const projects: Project[] = [
       "Rebuilt the product catalogue for sub-second load times",
       "Designed a mobile-first interface tested across real device sizes",
     ],
+    image: Ecommerce,
     isPlaceholder: true,
     results: null,
   },
@@ -121,6 +134,7 @@ export const projects: Project[] = [
       "Automated recurring workflows that were previously manual",
       "Built a dashboard giving leadership a real-time view of business health",
     ],
+    image: Business,
     isPlaceholder: true,
     results: null,
   },
