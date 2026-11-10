@@ -70,6 +70,18 @@ export default async function CaseStudyPage({
               {project.description}
             </p>
           </Reveal>
+          {project.url && (
+            <Reveal delay={0.2}>
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex items-center gap-2 rounded-full border border-primary/30 px-5 py-2.5 text-sm font-medium text-primary hover:border-primary hover:bg-primary hover:text-white"
+              >
+                Visit live site ↗
+              </a>
+            </Reveal>
+          )}
         </Container>
       </section>
 
