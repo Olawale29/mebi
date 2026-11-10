@@ -50,7 +50,7 @@ export function ProjectCard({ project }: { project: Project }) {
 
       <div className="mt-6 h-64 w-full overflow-hidden rounded-2xl md:h-80">
         <div className="h-full w-full transition-transform duration-700 ease-out group-hover:scale-[1.04]">
-          <ProjectCover slug={project.slug} />
+          <ProjectCover slug={project.slug} image={project.image} />
         </div>
       </div>
     </Link>

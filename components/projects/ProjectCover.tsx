@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 const base =
@@ -179,13 +180,29 @@ const covers: Record<string, React.ComponentType> = {
 
 export function ProjectCover({
   slug,
+  image,
   className,
   size = "md",
 }: {
   slug: string;
+  image?: string;
   className?: string;
   size?: "md" | "lg";
 }) {
+  if (image) {
+    return (
+      <div className={cn("relative h-full w-full overflow-hidden", className)}>
+        <Image
+          src={image}
+          alt=""
+          fill
+          sizes="(min-width: 1024px) 33vw, 100vw"
+          className="object-cover object-top"
+        />
+      </div>
+    );
+  }
+
   const Cover = covers[slug];
 
   return (
