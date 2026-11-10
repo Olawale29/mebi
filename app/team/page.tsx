@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
-import { team } from "@/data/team";
+import { leadership, staff } from "@/data/team";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { TeamCard } from "@/components/team/TeamCard";
+import { StaffRoster } from "@/components/team/StaffRoster";
 import { CTASection } from "@/components/sections/CTASection";
 
 export const metadata: Metadata = buildMetadata({
@@ -40,7 +41,7 @@ export default function TeamPage() {
 
       <section className="pb-24 md:pb-32">
         <Container>
-          {team.length === 0 ? (
+          {leadership.length === 0 ? (
             <Reveal>
               <div className="rounded-2xl border border-ink/10 bg-white p-10 text-center md:p-16">
                 <p className="text-lg text-muted leading-relaxed">
@@ -50,13 +51,15 @@ export default function TeamPage() {
             </Reveal>
           ) : (
             <div className="grid grid-cols-2 gap-x-8 gap-y-14 sm:grid-cols-3 lg:grid-cols-4">
-              {team.map((member, i) => (
-                <Reveal key={member.name} delay={0.05 * i}>
+              {leadership.map((member, i) => (
+                <Reveal key={member.slug} delay={0.05 * i}>
                   <TeamCard member={member} />
                 </Reveal>
               ))}
             </div>
           )}
+
+          <StaffRoster staff={staff} />
         </Container>
       </section>
 

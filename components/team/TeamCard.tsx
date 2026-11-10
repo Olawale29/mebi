@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { TeamMember } from "@/data/team";
 
 export function TeamCard({ member }: { member: TeamMember }) {
@@ -9,7 +10,7 @@ export function TeamCard({ member }: { member: TeamMember }) {
     .join("");
 
   return (
-    <div className="group">
+    <Link href={`/team/${member.slug}`} className="group block">
       <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-white ring-1 ring-ink/5">
         {member.photo ? (
           // The frame is laid out at 4:5 and the square card crops it, so
@@ -43,9 +44,6 @@ export function TeamCard({ member }: { member: TeamMember }) {
       </div>
       <p className="mt-4 font-semibold text-ink">{member.name}</p>
       <p className="text-sm text-muted">{member.role}</p>
-      {member.bio && (
-        <p className="mt-2 text-sm leading-relaxed text-muted/80">{member.bio}</p>
-      )}
-    </div>
+    </Link>
   );
 }
