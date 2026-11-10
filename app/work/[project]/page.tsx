@@ -77,7 +77,7 @@ export default async function CaseStudyPage({
         <Container>
           <Reveal>
             <div className="h-[340px] w-full overflow-hidden rounded-2xl md:h-[480px]">
-              <ProjectCover slug={project.slug} size="lg" />
+              <ProjectCover slug={project.slug} image={project.image} size="lg" />
             </div>
           </Reveal>
         </Container>
