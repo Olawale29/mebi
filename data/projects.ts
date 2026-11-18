@@ -90,7 +90,7 @@ export const projects: Project[] = [
     isPlaceholder: false,
     results: null,
     image: "/work/see-it-say-it.jpg",
-    url: "https://see-it-say-it-kappa.vercel.app/",
+    url: "https://seeitsay.com/",
   },
 ];
 
